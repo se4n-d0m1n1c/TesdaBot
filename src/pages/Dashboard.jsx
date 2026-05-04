@@ -7,7 +7,10 @@ import { useAuth } from '../context/AuthContext';
 
 const fetcher = async (url, track) => {
   if (url === 'assessments') {
-    const { data, error } = await supabase.from('assessment_records').select('*').order('completed_at', { ascending: false });
+    const { data, error } = await supabase.from('assessment_records')
+      .select('*')
+      .eq('ncii_track', track)
+      .order('completed_at', { ascending: false });
     if (error) throw error;
     return data;
   }
@@ -27,10 +30,11 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   
-  const { data: assessments, isLoading: assessmentsLoading } = useSWR(user ? 'assessments' : null, fetcher);
+  const nciiTrack = user?.user_metadata?.ncii_track || 'Computer Systems Servicing NCII';
+  
+  const { data: assessments, isLoading: assessmentsLoading } = useSWR(user ? ['assessments', nciiTrack] : null, (args) => fetcher(args[0], args[1]));
   const { data: profile, isLoading: profileLoading } = useSWR(user ? 'profile' : null, fetcher);
   
-  const nciiTrack = user?.user_metadata?.ncii_track || 'Computer Systems Servicing NCII';
   const { data: modules, isLoading: modulesLoading } = useSWR(user ? ['modules', nciiTrack] : null, (args) => fetcher(args[0], args[1]));
   const fullName = user?.user_metadata?.full_name || 'Student';
 
