@@ -1,13 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, HelpCircle, Loader2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { useLocation } from 'react-router-dom';
 import useSWR from 'swr';
 import { supabase } from '../../lib/supabaseClient';
 import { useAuth } from '../../context/AuthContext';
 
-const fetcher = async (url) => {
+const fetcher = async (url, param) => {
   if (url === 'chat_sessions') {
-    const { data, error } = await supabase.from('chat_sessions').select('*').order('created_at', { ascending: false }).limit(1);
+    const { data, error } = await supabase
+      .from('chat_sessions')
+      .select('*')
+      .eq('ncii_track', param)
+      .order('created_at', { ascending: false })
+      .limit(1);
+    if (error) throw error;
+    return data;
+  }
+  
+  if (url === 'chat_messages' && param) {
+    const { data, error } = await supabase.from('chat_messages').select('*').eq('session_id', param).order('created_at', { ascending: true });
     if (error) throw error;
     return data;
   }
@@ -17,25 +30,29 @@ const ChatbotInterface = () => {
   const { user } = useAuth();
   const location = useLocation();
   const selectedModule = location.state?.module;
-  const { data: sessions, error, isLoading } = useSWR(user ? 'chat_sessions' : null, fetcher);
+  const nciiTrack = user?.user_metadata?.ncii_track || 'Computer Systems Servicing NCII';
   
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sender: 'bot',
-      text: selectedModule 
-        ? `Hello! I see you want to discuss "${selectedModule}". How can I help you with this module today?`
-        : 'Hello! I am TESDA-Bot. I can help you understand training regulations, review modules, and prepare for your NCII assessment. What would you like to discuss today?'
-    }
-  ]);
+  const { data: sessions, isLoading: sessionsLoading } = useSWR(user ? ['chat_sessions', nciiTrack] : null, (args) => fetcher(args[0], args[1]));
   const [sessionId, setSessionId] = useState(null);
+  const { data: dbMessages, mutate: mutateMessages, isLoading: messagesLoading } = useSWR(user && sessionId ? ['chat_messages', sessionId] : null, (args) => fetcher(args[0], args[1]));
+  
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
+  // Initial welcome message if no history
+  const welcomeMessage = {
+    id: 'welcome',
+    role: 'assistant',
+    content: selectedModule 
+      ? `Hello! I see you want to discuss "${selectedModule}". How can I help you with this module today?`
+      : 'Hello! I am TESDA-Bot. I can help you understand training regulations, review modules, and prepare for your NCII assessment. What would you like to discuss today?'
+  };
+
+  const messages = dbMessages && dbMessages.length > 0 ? dbMessages : [welcomeMessage];
+
   useEffect(() => {
     if (sessions && sessions.length > 0) {
-      setMessages(sessions[0].messages);
       setSessionId(sessions[0].id);
     }
   }, [sessions]);
@@ -48,48 +65,83 @@ const ChatbotInterface = () => {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  const saveSession = async (newMessages) => {
-    if (!user) return;
-    try {
-      if (sessionId) {
-        await supabase.from('chat_sessions').update({ messages: newMessages, updated_at: new Date() }).eq('id', sessionId);
-      } else {
-        const { data, error } = await supabase.from('chat_sessions').insert([{ user_id: user.id, messages: newMessages }]).select();
-        if (!error && data && data.length > 0) {
-          setSessionId(data[0].id);
-        }
-      }
-    } catch (err) {
-      console.error("Failed to save chat session", err);
-    }
+  const getOrCreateSessionId = async () => {
+    if (sessionId) return sessionId;
+    const { data, error } = await supabase.from('chat_sessions').insert([{ 
+      user_id: user.id, 
+      title: selectedModule || 'General Discussion',
+      ncii_track: nciiTrack
+    }]).select();
+    if (error) throw error;
+    const newId = data[0].id;
+    setSessionId(newId);
+    return newId;
   };
 
   const handleSend = async (e) => {
     e?.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isTyping) return;
 
-    const userMessage = { id: Date.now(), sender: 'user', text: input };
-    const newMessages = [...messages, userMessage];
-    setMessages(newMessages);
+    const currentInput = input;
     setInput('');
     setIsTyping(true);
-    await saveSession(newMessages);
-    
-    // Record daily activity for streak
-    await supabase.rpc('record_daily_activity');
 
-    // Mocking AI response - Later connect this to AI provider
-    setTimeout(async () => {
-      const botMessage = {
-        id: Date.now() + 1,
-        sender: 'bot',
-        text: 'That is a great question. In the context of Computer Systems Servicing, you should always ensure power is disconnected and proper grounding is applied before touching internal components. Do you want me to quiz you on safety procedures?'
+    try {
+      const activeSessionId = await getOrCreateSessionId();
+
+      // 1. Save user message to DB (Best Practice: Local Optimistic Update via Mutate)
+      // 1. Save user message to DB (Best Practice: Local Optimistic Update via Mutate)
+      const dbUserMsg = {
+        session_id: activeSessionId,
+        user_id: user.id,
+        role: 'user',
+        content: currentInput
       };
-      const finalMessages = [...newMessages, botMessage];
-      setMessages(finalMessages);
+      
+      const { error: insertError } = await supabase.from('chat_messages').insert(dbUserMsg);
+      if (insertError) throw insertError;
+      
+      const userMsg = { ...dbUserMsg, id: 'temp-' + Date.now() };
+      mutateMessages([...(dbMessages || []), userMsg], false);
+
+      // 2. Call DeepSeek via Supabase Edge Function
+      const { data: aiResponse, error: functionError } = await supabase.functions.invoke('swift-api', {
+        body: {
+          messages: messages.map(m => ({
+            role: m.role || (m.sender === 'bot' ? 'assistant' : 'user'),
+            content: m.content || m.text
+          })).concat({ role: 'user', content: currentInput }),
+          session_id: activeSessionId,
+          track: nciiTrack,
+          module: selectedModule
+        }
+      });
+
+      if (functionError) throw functionError;
+
+      // 3. Optimistic Update for Bot Reply
+      if (aiResponse && aiResponse.content) {
+        const botMsg = {
+          id: 'bot-' + Date.now(),
+          session_id: activeSessionId,
+          user_id: user.id,
+          role: 'assistant',
+          content: aiResponse.content
+        };
+        mutateMessages([...(dbMessages || []), userMsg, botMsg], false);
+      }
+
+      // 4. Final sync with DB
+      await mutateMessages();
+      
+      // Record daily activity for streak
+      await supabase.rpc('record_daily_activity');
+    } catch (err) {
+      console.error("Chat Error:", err);
+      // Fallback message for error state
+    } finally {
       setIsTyping(false);
-      await saveSession(finalMessages);
-    }, 1500);
+    }
   };
 
   const handleSuggestion = (s) => {
@@ -120,25 +172,41 @@ const ChatbotInterface = () => {
 
       {/* Chat Area */}
       <div className="flex-grow-1 p-4 overflow-auto bg-light" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {messages.map((msg) => (
-          <div key={msg.id} className={`d-flex gap-3 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
+        {messages.map((msg, idx) => (
+          <div key={msg.id || idx} className={`d-flex gap-3 ${msg.role === 'user' || msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
             {/* Avatar */}
-            <div className={`p-2 rounded-circle align-self-end ${msg.sender === 'user' ? 'bg-primary text-white' : 'bg-white shadow-sm border'}`} style={{ minWidth: '40px', textAlign: 'center' }}>
-              {msg.sender === 'user' ? <User size={20} /> : <Bot size={20} style={{ color: 'var(--tb-primary)' }} />}
+            <div className={`p-2 rounded-circle align-self-end ${(msg.role === 'user' || msg.sender === 'user') ? 'bg-primary text-white' : 'bg-white shadow-sm border'}`} style={{ minWidth: '40px', textAlign: 'center' }}>
+              {(msg.role === 'user' || msg.sender === 'user') ? <User size={20} /> : <Bot size={20} style={{ color: 'var(--tb-primary)' }} />}
             </div>
             
             {/* Message Bubble */}
             <div 
-              className={`p-3 shadow-sm ${msg.sender === 'user' ? 'bg-primary text-white' : 'bg-white'}`}
+              className={`p-3 shadow-sm ${(msg.role === 'user' || msg.sender === 'user') ? 'bg-primary text-white' : 'bg-white'}`}
               style={{
                 borderRadius: 'var(--tb-radius-lg)',
-                borderBottomRightRadius: msg.sender === 'user' ? '4px' : 'var(--tb-radius-lg)',
-                borderBottomLeftRadius: msg.sender === 'bot' ? '4px' : 'var(--tb-radius-lg)',
+                borderBottomRightRadius: (msg.role === 'user' || msg.sender === 'user') ? '4px' : 'var(--tb-radius-lg)',
+                borderBottomLeftRadius: (msg.role === 'assistant' || msg.role === 'bot' || msg.sender === 'bot') ? '4px' : 'var(--tb-radius-lg)',
                 maxWidth: '75%',
                 lineHeight: '1.5'
               }}
             >
-              {msg.text}
+              <ReactMarkdown 
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  p: ({node, ...props}) => <p className="mb-2" {...props} />,
+                  ul: ({node, ...props}) => <ul className="mb-2 ps-3" {...props} />,
+                  ol: ({node, ...props}) => <ol className="mb-2 ps-3" {...props} />,
+                  li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                  code: ({node, inline, ...props}) => (
+                    <code className={`px-1 py-0.5 rounded bg-opacity-10 ${msg.role === 'user' || msg.sender === 'user' ? 'bg-white' : 'bg-dark text-danger'}`} {...props} />
+                  ),
+                  h1: ({node, ...props}) => <h1 className="h5 fw-bold mb-2" {...props} />,
+                  h2: ({node, ...props}) => <h2 className="h6 fw-bold mb-2" {...props} />,
+                  h3: ({node, ...props}) => <h3 className="h6 fw-bold mb-2" {...props} />,
+                }}
+              >
+                {msg.content || msg.text}
+              </ReactMarkdown>
             </div>
           </div>
         ))}

@@ -27,3 +27,4 @@ supabase/migrations/00003_streak_tracking.sql
 supabase/migrations/00004_modules_table.sql
 supabase/migrations/00005_study_time.sql
 supabase/migrations/00006_module_questions.sql
+supabase/migrations/00007_chat_history.sql
