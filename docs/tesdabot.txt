@@ -1,0 +1,2090 @@
+“TESDA-Bot: An Interactive Guide for TechVoc Students to prepare for National
+Certificate (NCII) Exams”
+
+A Capstone Project
+Submitted to the Faculty of the
+Institute of Information and Computing Technology
+
+In Partial Fulfillment
+of the Requirements for the Degree of
+Bachelor of Science in Information Technology
+
+ESTOLE, JOHN ALBERT
+ESTUYA, LAUCHE MARIE
+PARINGIT, GEL
+REFUGIO, DEMARCK JV
+VOCAL, RICOMEL
+
+May 2026
+
+INTRODUCTION
+Background and Rationale of the Study
+Technical Vocational Education and Training (TVET) has gained increasing
+recognition as a critical pathway for workforce development in the Philippines,
+with the Technical Education and Skills Development Authority (TESDA) leading
+efforts through its National Certificate Level II (NCII) assessments. These
+certifications validate essential competencies in high-demand trades such as
+computer systems servicing, welding, automotive servicing, and household
+services, enabling graduates to secure immediate employment and contribute to
+economic growth. Globally, competency-based vocational training models
+demonstrate that targeted preparation significantly improves certification success
+rates and labor market alignment.
+However, despite TESDA's extensive network of training centers and online
+resources like the Training for Work Scholarship Program (TWSP) and e-Learning
+platform (TOP), TechVoc students continue to face substantial challenges in NCII
+exam
+
+preparation.
+
+classroom-based
+
+Existing
+
+drills,
+
+and
+
+methods—primarily
+generic
+
+online
+
+static
+
+printed
+
+modules—lack
+
+reviewers,
+interactivity,
+
+personalization, and real-time feedback, resulting in persistently low pass rates
+that hover below 60% in many sectors. These limitations are particularly acute for
+students from rural areas and low-income households, who face financial barriers
+to costly review centers and limited access to qualified instructors, exacerbating
+the digital divide in skills development.
+
+In the Philippine context, TESDA reports consistently show significant
+certification reluctance among NCII completers, with substantial attrition rates
+between training completion and examination. The Department of Labor and
+Employment (DOLE) has emphasized the urgency of innovative solutions to
+address skills mismatches, aligning with Republic Act 11230 (TVET Act)
+mandates for universal access to quality technical education that meets industry
+demands.
+Given these challenges, the development of TESDA-Bot: An Interactive
+Guide for TechVoc Students to prepare for National Certificate (NCII) Exams aims
+to transform NCII preparation by providing a free, 24/7 AI-powered chatbot. This
+platform simplifies complex TESDA training regulations through conversational
+dialogues, delivers unlimited practice exams with hint-based feedback, supports
+self-paced learning, and creates a pressure-free environment to build student
+confidence and competence.
+This study aims to solve the main research gap which exists because there
+are no intelligent tutoring systems that provide accessible learning resources for
+TESDA NCII preparation in the Philippines. The existing e-learning platforms and
+generic chatbots lack proper implementation of adaptive assessment simulation
+combined
+
+with
+
+progressive
+
+feedback
+
+mechanisms
+
+and
+
+TESDA-specific
+
+competency mapping to meet the special requirements of vocational certification
+examinations.
+This study has major significance because it intends to make NCII
+certification results accessible to TechVoc students who currently lack educational
+
+resources. This study also aligns with SDG 4: Quality Education by promoting
+inclusive and equitable access to high-quality technical training. Ultimately,
+TESDA-Bot seeks to minimize certification costs, reduce system dropout rates,
+and empower students to master industry-ready competencies, fostering a more
+qualified and competitive Philippine workforce.
+
+​
+The expected outcomes of the project include three main benefits which will
+decrease certification expenses, reduce system dropout rates, and create secure
+learning spaces which will help students succeed while developing a vocational
+training system that uses AI technology to produce more qualified employees for
+the Philippine workforce.
+
+Objectives of the Study
+The main objective of this research is to build TESDA-Bot, an
+interactive AI assistant that is accessible 24/7 at your most convenient time
+without any pressure, offering free mentoring services to ensure students’
+success in acquiring NCII Certification.
+To achieve this goal, the research pursues five specific objectives:
+
+1. To provide students with opportunities to take control of their own review
+schedule by giving them ways to gauge how well they are doing and how far they
+have progressed.
+2. To develop a safe environment where the students will be able to ask
+and practice the exams as many times as they need until they feel confident
+enough to take the actual NCII test on their own without any pressure.
+
+3. To transform and intricate TESDA training rules into a much
+manageable, straightforward interactive dialogues that can effectively assist
+students in grasping information with the help of AI.
+4.To offer an accessible guide that students can utilize via web app,
+ensuring that those who cannot afford expensive study resources or individuals
+who still lack access to a reliable reviewer can utilize it.
+5.To establish a hint-based feedback mechanism where the chatbot not
+only provides the correct answer but also directs the student towards the proper
+reasoning during practice tests.
+
+Significance of the Study
+The development and application of TESDA-Bot represent a fundamental
+shift from conventional and static methods of vocational assessment to a more
+fluid and AI-driven model of education. The research is significant because it
+tackles head-on the digital divide and economic barriers that prevent Filipino
+TechVoc students from attaining professional certification
+
+This study centered on the development and implementation of
+"TESDA-Bot: An Interactive Guide for TechVoc Students to Prepare for National
+Certificate (NCII) Exams" holds profound significance for various stakeholders
+within the Technical Vocational Education and Training (TVET) sector in the
+Philippines.
+
+The following sector is the beneficiaries of this study:
+
+Field of Technical Vocational Education and Training (TVET)
+TESDA-Bot represents a novel approach to enhancing the preparation of
+Technical Vocational (TechVoc) students for their National Certificate (NCII)
+examinations. It contributes to the field by offering an innovative, accessible, and
+interactive learning tool that complements traditional review methods. This study
+aims to demonstrate how AI-powered chatbots can effectively bridge the gap in
+exam preparation resources, thereby improving the overall quality and
+accessibility of TVET education.
+
+TechVoc Students
+The primary beneficiaries of TESDA-Bot are the TechVoc students
+themselves. The interactive guide will provide them with a readily available,
+personalized platform to review course materials, practice exam questions, and
+receive immediate feedback. This will not only boost their confidence but also
+improve their understanding of the NCII exam requirements, ultimately increasing
+their chances of passing and obtaining their certifications. This directly addresses
+the problem of students facing challenges in accessing adequate and tailored
+review materials.
+
+TESDA and Training Institutions
+For TESDA and various training institutions, TESDA-Bot offers a scalable
+and cost-effective solution to support student success. It can serve as a valuable
+
+tool to augment their existing review programs, ensuring that students are better
+prepared for assessments. The bot's ability to provide consistent and up-to-date
+information can also help maintain high standards across different training
+centers.
+
+Educators and Trainers:
+Educators and trainers can utilize TESDA-Bot as a supplementary
+resource to reinforce learning and provide additional support to students outside
+of regular class hours. It can help identify areas where students commonly
+struggle, allowing educators to focus their instruction more effectively and provide
+targeted interventions.
+
+To Policymakers and Future Researchers
+This study's findings can inform policymakers about the potential of AI in
+enhancing vocational education and skills development. It provides evidence for
+the effectiveness of digital learning tools in preparing students for national
+competency assessments. Furthermore, the research can serve as a foundation
+for future studies exploring the integration of AI in various aspects of vocational
+training and assessment, contributing to the evolving body of literature in
+educational technology and workforce development.
+
+Scope and Limitation
+This study aimed to develop and evaluate TESDA-Bot, an interactive AI
+guide designed to assist TESDA TechVoc students at selected TechVoc schools in
+
+Metro Manila in preparing for their NCII exams, covering key competency areas in
+qualifications like NCII in Computer Systems Servicing and Bread and Pastry
+Production. The study spanned within the duration of the school year 2025-2026,
+targeting a selected group of these students for testing feedback on its features,
+including review materials, practice quizzes, FAQs, and exam strategies.
+However, it is important to note limitations such as coverage of only popular NCII
+qualifications, a small sample size affecting generalizability, reliance on
+participants' device/internet access and digital literacy, shallower content depth as
+a supplementary tool, AI constraints on nuanced responses, challenges in
+measuring exam impact due to data policies, and finite resources for development
+and maintenance. These delimitations ensured focused, feasible implementation
+while prioritizing practicality and resource constraints. Despite them, TESDA-Bot
+holds potential to enhance NCII exam preparation through user-friendly,
+accessible support.
+
+Conceptual Framework
+
+Figure 1. TESDA-Bot Conceptual Framework​
+​
+This study employs an Input-Process-Output (IPO) model as its conceptual
+framework to delineate the relationships between the core components and
+expected outcomes of developing and implementing TESDA-Bot.
+Input:
+This section details the essential resources, data, and foundational elements
+required for the creation and operation of TESDA-Bot.
+1.​
+
+Student Data:
+
+○​
+
+Demographic Information: Grade level, course/specialization, school.
+
+○​
+
+Learning Needs: Identified areas of difficulty or topics students find
+
+challenging in NCII preparation.
+○​
+
+Prior Knowledge Assessment: Results from initial diagnostic tests or
+
+self-assessments of their understanding of NCII competencies.
+○​
+
+Learning Preferences: Preferred modes of learning (e.g., text-based,
+
+visual aids, practice questions).
+2.​
+
+NCII Examination Content:
+
+○​
+
+TESDA Training Regulations (TRs): Official documents outlining the
+
+competencies, knowledge, skills, and attitudes required for specific NCII
+qualifications.
+○​
+
+Sample Examination Questions: Past exam papers or realistically crafted
+
+practice questions aligned with TRs.
+○​
+
+Key Concepts and Procedures: Essential theoretical knowledge and
+
+practical skills for each competency unit.
+○​
+
+Assessment Criteria: Understanding of how NCII exams are evaluated.
+
+3.​
+
+Technological Infrastructure:
+
+○​
+
+Chatbot Development Platform: The chosen software or framework for
+
+building the conversational AI (e.g., Dialogflow, Rasa, custom development).
+○​
+
+Natural Language Processing (NLP) Capabilities: Algorithms and
+
+models for understanding user queries and generating relevant responses.
+○​
+
+Database:
+
+Storage
+
+for
+
+NCII
+
+content, user interaction logs, and
+
+performance data.
+○​
+
+User Interface (UI) / User Experience (UX) Design: Principles for
+
+creating an accessible and intuitive chatbot interface.
+4.​
+
+Expert Knowledge:
+
+○​
+
+TESDA Trainers/Assessors: Input on critical competencies, common
+
+student errors, and effective review strategies.
+○​
+
+Curriculum Developers: Guidance on structuring the learning content
+
+logically.
+○​
+
+AI/Chatbot Developers: Technical expertise in chatbot design and
+
+implementation.
+Process:
+This component describes the operational flow and interactions within the
+TESDA-Bot system, detailing how inputs are transformed into outputs.
+1.​
+
+User Interaction:
+
+○​
+
+Query Input: Students interact with TESDA-Bot by asking questions,
+
+requesting information, or initiating practice quizzes.
+○​
+
+Natural Language Understanding (NLU): The bot processes user
+
+queries using NLP to understand intent and extract key information.
+2.​
+
+Content Retrieval and Response Generation:
+
+○​
+
+Information Search: The bot accesses its knowledge base (NCII content)
+
+to find relevant information or answers.
+○​
+
+Personalized Feedback: Provides explanations, definitions, step-by-step
+
+procedures, and answers to specific questions.
+○​
+
+Quiz Module: Generates practice quizzes based on selected competency
+
+areas, tracks user responses, and provides immediate feedback on correctness.
+3.​
+
+Learning Support Features:
+
+○​
+
+Progress Tracking (Basic): Logs user interactions and quiz performance
+
+to provide a basic overview of areas covered or needing more review.
+○​
+
+Guidance on Exam Strategies: Offers tips and advice on how to
+
+approach the NCII examination.
+4.​
+
+Feedback Mechanism:
+
+○​
+
+User Feedback Collection: Allows students to rate the helpfulness of
+
+responses or report issues.
+○​
+
+Data Logging: Records interaction patterns, common queries, and quiz
+
+results for analysis and improvement.
+Output:
+This section outlines the expected outcomes and results derived from the use of
+TESDA-Bot.
+1.​
+
+Enhanced NCII Exam Preparedness:
+
+○​
+
+Improved Knowledge Retention: Students gain a better understanding
+
+and recall of NCII competencies.
+○​
+
+Increased Confidence: Students feel more prepared and confident in their
+
+ability to pass the NCII exams.
+○​
+
+Skill Reinforcement: Practice quizzes help reinforce practical skills and
+
+theoretical knowledge.
+2.​
+
+Increased Accessibility to Review Materials:
+
+○​
+
+24/7 Availability: Students can access review support anytime, anywhere.
+
+○​
+
+Personalized Learning Pace: Students can learn and practice at their
+
+own speed.
+3.​
+
+TESDA-Bot System:
+
+○​
+
+Functional Chatbot: A deployed and operational interactive guide.
+
+○​
+
+User Interaction Data: Logs of student queries, quiz performance, and
+
+feedback.
+4.​
+
+Contribution to TVET:
+
+○​
+
+Improved Pass Rates (Potential): An anticipated increase in the success
+
+rate of TechVoc students in NCII examinations.
+
+○​
+
+Data for Improvement: Insights gained from user data can inform future
+
+iterations of the bot and potentially TESDA's review strategies.
+○​
+
+Foundation for Future Research: Provides a basis for further studies on
+
+AI in vocational education.
+
+Definition of Terms
+For the readers to fully comprehend this study, the following are the notable terms
+that have been utilized in the study:
+Operational Term
+●​
+
+Technical Vocational Education and Training (TVET): Refers to the
+
+education process that equips individuals with the knowledge, skills, and
+competencies for employment in a particular trade, occupation, or profession. In
+the context of this study, it specifically pertains to the programs and certifications
+offered by TESDA.
+●​
+
+National Certificate (NCII) Exams: These are competency-based
+
+assessments administered by TESDA to validate that individuals possess the
+required skills and knowledge for specific technical and vocational roles. Passing
+these exams leads to the awarding of an NCII certificate.
+●​
+
+TESDA-Bot: An AI-powered chatbot developed in this study, designed to
+
+provide interactive guidance and review materials for TechVoc students preparing
+for their NCII exams. It functions as a 24/7 accessible digital assistant.
+●​
+
+Chatbot: A computer program designed to simulate conversation with
+
+human users, especially over the internet. In this study, it refers to the AI assistant
+that interacts with students.
+●​
+
+AI-powered: Utilizing Artificial Intelligence technologies, such as Natural
+
+Language Processing (NLP), to enable the chatbot to understand user queries
+and provide intelligent responses.
+●​
+
+Self-Paced Learning: A mode of learning where students control the pace
+
+at which they progress through the review materials and practice exams, allowing
+them to learn according to their individual needs and schedules.
+
+●​
+
+Hint-based Feedback: A type of feedback provided by the chatbot that not
+
+only indicates whether an answer is correct or incorrect but also guides the
+student towards the correct reasoning process.
+●​
+
+Safe Environment: Refers to the non-pressured, supportive digital space
+
+created by the chatbot where students can practice and ask questions without
+fear of judgment or negative consequences, thereby boosting their confidence.
+Technical Term
+●​
+
+Technical Vocational Education and Training (TVET): (As defined
+
+operationally above, but also understood in the broader educational and policy
+context related to skills development and workforce readiness.)
+●​
+
+National Certificate (NCII) Exams: (As defined operationally above, but
+
+also understood within the framework of TESDA's national qualification system
+and industry standards.)
+●​
+
+Artificial Intelligence (AI): The simulation of human intelligence
+
+processes by computer systems, including learning, problem-solving, and
+decision-making.
+●​
+
+Chatbot: A computer program that simulates human conversation through
+
+text or voice interactions.
+●​
+
+Natural Language Processing (NLP): A subfield of AI that enables
+
+computers to understand, interpret, and generate human language.
+●​
+
+Training Regulations (TRs): Official documents issued by TESDA that
+
+detail the specific competencies, knowledge, skills, and attitudes required for a
+particular vocational qualification.
+●​
+
+Competency-based assessment: An evaluation method that focuses on
+
+determining whether an individual can perform specific tasks or demonstrate
+specific skills to a defined standard, rather than on theoretical knowledge alone.
+●​
+
+Attrition Rate: The rate at which students drop out of a program or fail to
+
+complete a course or assessment.
+
+CHAPTER II
+REVIEW OF RELATED LITERATURE
+
+This chapter reviews literature and studies supporting technical-vocational
+education (TVET), middle-skills development, and AI-chatbot integration in
+educational and career technologies, organized into local literature/studies and
+foreign literature/studies to contextualize workforce linkages. Philippine TVET
+research reveals alignments with employment needs amid challenges like industry
+mismatches, inconsistent implementation, and competency gaps, with student
+success
+
+hinging
+
+on
+
+guidance—necessitating
+
+teacher
+reforms
+
+and
+
+skills,
+
+resources,
+
+partnerships.
+
+Local
+
+support,
+
+and
+
+studies
+
+affirm
+
+TVET/TESDA efficacy while highlighting barriers and innovations like gamified/AI
+tools for engagement and readiness. Foreign literature underscores AI chatbots'
+role in personalized learning, despite engagement, privacy, and integration
+hurdles, while studies demonstrate their enhancement of technical/vocational
+skills via interactive systems, tempered by tech/security/training issues, and
+amplified by gamification/microlearning.
+​
+
+Local Literature​
+The existing Philippine literature indicates that students who choose their
+own career paths fail to select fields which match their actual capabilities and their
+
+interest and their academic preparedness, which creates an urgent requirement to
+enhance student guidance systems. Public high school students in Cebu City
+base their career choices on what their families expect and what they see as
+popular trends, which leads to their career confusion and demotivational
+experience and their inability to predict their future outcomes[1]. The study
+proposes a career path recommender system which targets the problem of career
+choice mismatches that students in the Philippines experience. The tool helps
+students make important choices which determine their future career paths by
+connecting their personal interests and abilities with available professional
+options. The system uses machine learning together with a multi-dimensional
+dataset to create customized recommendations which help students select paths
+that match their individual academic and personal characteristics[2]. The research
+conducted in Tagbilaran City Division shows that National Career Assessment
+Examination results do not affect students' choice of academic tracks because
+students choose the Academic Track despite better performance in other tracks
+like Arts Track, which proves that career guidance programs fail to execute their
+functions[3]. The University of the Philippines Diliman study found that students
+who choose college majors that do not match their Senior High School strands
+face academic challenges in STEM fields which demonstrates the necessity of
+proper track alignment[4]. This study is about choosing the right career before
+entering college which functions as a vital turning point for students yet most
+students select their career paths without professional assistance and they fail to
+use essential resources such as NCAE tests and aptitude assessments. The
+
+absence of prior guidance results in two main problems for students because it
+creates academic performance problems and students select study paths which
+do not match their personal traits and interests and natural talents. The
+researchers call for a system development which will deliver precise guidance
+through the use of interactive tools that include image-based questionnaires to
+enhance student participation and focus according to their study[5]. The present
+research examines middle-skilled professions in the Philippines through
+examination of institutional definitions and execution methods for middle-skilled
+training programs which determine their success in meeting workforce needs
+outlined in the Philippine Development Plan (PDP) 2023-2028. The research
+employs a multi-method qualitative approach which combines data from the
+Philippine Statistics Authority's Labor Force Survey with interviews of TVET
+practitioners to demonstrate that Level 5 post-secondary graduates achieve better
+employment outcomes and higher salary levels than Level 6 bachelor's degree
+undergraduates. Training programs face effectiveness challenges because of two
+main issues which include a partial understanding of middle skills and an
+educational system that fails to match actual workforce requirements. The
+research study recommends development of a central policy framework which
+requires ongoing input from all affected parties to protect middle-skills education
+from becoming outdated through technological advancements. The nation
+requires complete reform measures which will enable its workforce to adapt while
+boosting its international competitiveness. Future research should evaluate how
+middle-skills training impacts employment results and economic resilience over an
+
+extended period of time. The nation requires complete reform measures which will
+enable its workforce to adapt while boosting its international competitiveness.
+Future research should evaluate how middle-skills training impacts employment
+results and economic resilience over an extended period of time [6]. The research
+paper presents results from a pilot study which tested the Hotel and Restaurant
+Services and Electro Mechanic Course at the University of San Carlos between
+2012 and 2015. The university partnered with the Center for Industrial and
+Technical Enterprise to assist graduates in finding employment opportunities. The
+university provided general education subjects, while the center focused on
+technical training. The students gained practical experience through job training
+which resulted in their employment after graduation because they had developed
+essential
+
+skills
+
+for
+
+the
+
+workforce.
+
+The
+
+pilot
+
+study
+
+demonstrated
+
+that
+
+competency-based training successfully fulfills the requirements of academic
+institutions and industries [7]. The study examines how public secondary schools
+in Pagbilao District Quezon implement TLE and TVL programs which aim to
+create lifelong learners through their new curriculum development. The research
+used descriptive developmental research and sequential exploratory research to
+study both school administrators and TLE and TVL teachers. The study found that
+both programs operate at sufficient levels because they maintain all required
+components through their qualified teaching staff. The program showed moderate
+implementation while students achieved competent learning results. The study
+established that both TLE and TVL programs operate at acceptable levels which
+connect program implementation assessment with student performance results
+
+[8]. The research examined work readiness among TVL graduates from two public
+secondary schools located in Mabalacat Pampanga through their assessment of
+social skills and personal attitude and organizational awareness and technical
+skills. The study assessed employed graduates from 2019-2022 who mostly
+consisted of male participants aged 22-24 and had limited work experience.
+Graduates demonstrated proficiency in required areas although their work
+readiness showed significant variation according to their different profiles. The
+assessments conducted by employers and graduates showed no significant
+differences between their evaluation results. The proposed intervention plan will
+improve work readiness for graduates through its two main components which
+include ongoing employability enhancement initiatives and the tracer study that
+will monitor employment status [9]. The study evaluated A competency-based
+program implementation at a public high school technical vocational education
+program through its four objectives which included 1) evaluation of program
+execution 2) identification of operational challenges 3) assessment of different
+perceptions between two groups about program execution and operational
+difficulties 4) development of program improvement recommendations. The
+researchers used descriptive research methods to collect data through a validated
+questionnaire which used the Five-Point Likert Scale. The researchers used
+statistical analysis methods which included frequency percentage weighted mean
+standard deviation and t-test analysis to test hypotheses at a significance level of
+0.05 [10].The assessment of Senior High School student performance in the
+Strengthened Technical-Vocational Education Program (STVEP) at Isabela
+
+School of Fisheries is conducted through this study for the academic year
+2024-2025.The study used questionnaires to collect data from 126 students and
+teachers while investigating specializations that included Aquaculture, Carpentry,
+Food Processing, and Organic Agriculture Production. The research found that
+students who achieved high performance in Aquaculture studies and Organic
+Agriculture studies displayed three different levels of skill mastery. The results of
+the study depended on student interest, study habits, teacher characteristics,
+teaching methods, administrative support and available resources. Students and
+teachers showed significant perception differences about Aquaculture and
+Carpentry according to the research findings. The study recommends enhancing
+teacher training, instructional materials, school infrastructure, and parental
+engagement, emphasizing their roles in improving technical-vocational education
+outcomes and guiding future curriculum and development efforts [11]. The Senior
+High School program in the Philippines has highlighted technical vocational
+education (TVE) which helps students prepare for jobs that require middle-level
+skills. The study assessed how public senior high schools in Batangas operate
+their Technical Vocational Livelihood (TVL) Track through the evaluation of input
+resources and their adherence to Department of Education standards and their
+educational processes and student satisfaction levels. The research employed a
+descriptive-evaluative design which collected data from 36 school heads and 119
+TVL teachers and 375 students through surveys and interviews and documentary
+analysis. The study found that organizations received enough resources to
+operate their programs while they achieved above-standard results and reached
+
+very high process implementation levels and students expressed strong
+satisfaction levels. The analysis established significant relationships between
+satisfaction and both input adequacy and compliance which showed different
+results according to participant evaluations. The study needs additional research
+about TechVoc graduates' work opportunities to determine the TVL track benefits
+[12]. The study explored factors that determine Technical Vocational Education
+(TVE) students' choice of specialization and their academic success at DepEd
+Division of Sorsogon. The study examined 405 Grade 10 students through
+quantitative-descriptive research which revealed that demographic elements and
+environmental elements together influenced students' specialization selection.
+Students achieved proficiency in Food Trades and Cosmetology and other fields
+while their performance in SMAW FCM and Civil Technology reached an
+approaching proficiency level. The results showed that academic success related
+to demographic characteristics but environmental factors did not show any
+significant connection to academic success. The study found that family income
+and job opportunities function as the main factors which drive TVE students to
+select their specialized fields of study. 13. The study found that family income and
+job opportunities function as the main factors which drive TVE students to select
+their specialized fields of study [13]. Students choose their vocational path during
+their entrance to senior high school while school counselors assist them with their
+vocational
+
+selection
+
+process. The Career Guidance Advocacy Program
+
+investigation studied its operational execution in Bohol which assessed its effect
+on 1200 students and 60 guidance counselors and homeroom advisers. The
+
+research used a descriptive correlational design with adapted questionnaires to
+show that educational qualifications and job descriptions together with work
+experience and resource limitations affected the success of career guidance
+programs. The National Career Assessment Examination (NCAE) results went
+unobserved by multiple students because of various intervening factors which
+demonstrated
+
+that
+
+career
+
+guidance
+
+had
+
+no
+
+direct
+
+impact on student
+
+decision-making. The program required improvement through recommendations
+which researchers presented [14]. The study examines how Technology and
+Livelihood Education teacher competencies affect student learning outcomes
+because this research seeks to identify academic success predictors. The study
+used a descriptive research design to collect data from TLE teachers and
+students in La Union, Philippines by using questionnaires that assessed teacher
+competencies and background information. The analysis showed that TLE
+teachers achieved high levels of instructional research and extension competence
+which resulted in positive student outcomes particularly in Home Economics. The
+research findings demonstrate that teachers' educational background directly
+influences their ability to teach and conduct research which subsequently
+determines student academic achievement. The research study establishes a
+foundation for improving TLE instruction through specific enhancement measures
+[15].
+
+Local Studies
+
+The literature review includes studies about Technical-Vocational
+Education and Training (TVET) and TESDA programs and educational
+technology implementation in Philippine educational systems. The research
+study describes TESDA scholarship data and employment statistics and
+stakeholder interviews from 2019 to 2024 as the basis for TVET evaluation
+which
+
+demonstrated
+
+that
+
+data-based
+
+policies
+
+and
+
+government-industry-training institution partnerships lead to better program
+results[16]. The research found that BSICC students achieved satisfactory
+results in contact center competencies because they met TESDA
+standards for communication and teamwork skills yet they needed to
+develop their technical operations expertise to secure international job
+opportunities[17]. The research on Technology and Livelihood Education
+(TLE) demonstrated that teacher qualifications and available facilities
+determine student performance yet equipment and resource shortages in
+Cookery and Horticulture training programs continue to impact student
+learning outcomes[18]. The National System of Technical Vocational
+Education and Training (NSTVET) review discovered that TESDA requires
+better regulatory operations and enterprise training approaches because
+the organization needs to develop programs which match industry needs
+while increasing its funding capabilities and monitoring systems and public
+relations efforts[19]. The study examined AI-driven English learning tools
+used in Philippine colleges and found that these tools enable students to
+learn independently while delivering personalized teaching methods and
+
+fostering educational innovation. The study found three primary obstacles
+which must be addressed before educational AI systems can reach their
+maximum potential. The three obstacles include scarcity of training
+materials and infrastructure problems and ethical issues which need to be
+fixed before educational AI systems can function at their best capacity[20].
+The
+
+study
+
+addresses
+
+the
+
+three
+
+main
+
+problems
+
+which
+
+affect
+
+TESDA-accredited technical-vocational education programs because all
+three exist through their need to use heavy and costly equipment tools. The
+Notable Ergonomic Universal Working Table was created through research
+development which followed the ADDIE model for evaluation by 30
+participants who included TESDA assessors and students. The table
+received
+
+high
+
+ratings
+
+for
+
+functionality,
+
+efficiency,
+
+usability,
+
+and
+
+maintainability, with overall effectiveness rated highly as a multi-functional
+and portable instructional asset. The solution demonstrated a teaching
+enhancement which led to better educational outcomes while satisfying
+TESDA requirements. The research demonstrates that the table enables
+better teaching methods and the study suggests that future designs should
+include smart technologies to create systems which meet the requirements
+of Industry 4.0 and Education 5.0 [21]. CSS Quest is an educational
+initiative that helps Grade 12 students in Calamba City, Laguna learn about
+computer system servicing. The program creates an interactive learning
+environment through its gamified progress tracking system and interactive
+storytelling algorithm. Students can monitor their progress through the
+
+tasks and challenges they complete, while they gain rewards and
+experience content through narrative-driven scenarios that simulate
+real-life situations. The approach helps students develop critical thinking
+skills and knowledge retention through active learning, which helps them
+prepare for real-world professional challenges [22]. The study uses a
+survey questionnaire to evaluate the Technology and Livelihood Education
+competencies which Grade VI teachers possess. The study results show
+that most TLE teachers belong to the age group of young adults to
+middle-aged adults while they are married and work at Teacher I positions
+and most of them have completed master's degree coursework. The group
+of teachers who work at the school system needs to obtain national
+certification and complete training programs because they currently lack
+both these requirements. The profile of TLE teachers varies according to
+their age and gender and marital status and position title and educational
+level and training they have completed. The research indicates that TLE
+teachers possess "experienced" status because they demonstrate
+proficiency in most competencies which exist across four TLE areas while
+their ICT and Entrepreneurship and Agriculture and Home Economics and
+Industrial Arts competencies show no connection to their teacher profiles
+except for Agriculture which displays a connection based on position title
+[23]. The research examined factors that affect STEM teaching at a Private
+Higher Education Institution in Maasin City during the 2017-2018 academic
+year. The researchers used descriptive research methods to evaluate
+
+teacher abilities and school environment and educational resources which
+students used to study STEM subjects. The study discovered three main
+results: (a)Most STEM teachers were young married women who had
+completed master's level education but required additional K to 12 training.
+(b)The teaching staff showed high proficiency in their instructional abilities
+while the school environment and educational resources received proficient
+ratings. (c)Most students showed very satisfactory results while they
+developed positive attitudes toward STEM subjects. (d)The researchers
+discovered a relationship between K to 12 training hours and teacher
+proficiency and they also found a relationship between curriculum content
+and pedagogy and bachelor degree courses while school climate showed a
+link with gender. (e)The study found no important connection between K to
+12 implementation factors and student academic performance. (f)Teachers
+demonstrate their dedication to effective educational practices through their
+implementation of best practices in their teaching [24]. The study evaluated
+the implementation of the Technical-Vocational-Livelihood (TVL) Track in
+secondary schools in the Botolan District. The research team studied six
+school heads together with 75 teachers through a survey questionnaire
+which they analyzed using descriptive research methods and both
+descriptive and inferential statistics. The TVL track showed successful
+implementation through its facilities and industry partnerships and learning
+environments and instruction and overall requirements of the program
+although teachers and administrators showed different views about its
+
+execution. The study highlights the need to assess responses for Senior
+High School TVL Track evaluation while recommending future research
+with larger participant groups from multiple areas to strengthen study
+findings [25]. The study investigated how high school graduates from
+model schools in CALABARZON region experienced their transition to life
+after graduation. The study involved 80 graduates who completed their
+studies at three different Technical-Vocational schools. The research team
+collected data through interviews which they evaluated using a qualitative
+interpretative phenomenological research design. The study found that
+students' transition process was affected by five major factors which
+included their perception of others and school programs and their senior
+high school difficulties and their post-graduation career decisions and their
+self-preparation methods and track selection decisions. The study
+recommends that institutions should develop career guidance programs
+which will assist both students and their parents to identify suitable
+extracurricular activities while developing systems to acknowledge student
+accomplishments and establish a graduate tracer study program [26]. The
+Enhanced Basic Education Act of 2013 aimed to improve educational
+standards in the Philippines, which permitted students to exit study
+programs
+
+through
+
+four
+
+different
+
+paths
+
+that
+
+included employment
+
+opportunities, entrepreneurship, tertiary education, and middle skills
+development. A Descriptive Correlation Research conducted with 564
+Senior High School (SHS) graduates in Plaridel, Bulacan, showed that
+
+more than 75 percent of students continued their education at tertiary
+levels. A small percentage opted for employment (10.11%) and
+entrepreneurship (7.09%). The study discovered that SHS track selection
+by students resulted in their specific curriculum pathway choices which
+confirmed the effectiveness of Career Guidance and Counseling Programs.
+The researchers proposed extra activities which would help graduates
+make better career choices [27]. The study investigates the reasons and
+difficulties which twelve BTLEd students face who study Technology and
+Livelihood Education during the pandemic. The research used a
+phenomenological methodology together with thematic analysis to identify
+four themes which included academic progression financial difficulties and
+challenges in obtaining additional learning resources and the difficult nature
+of TLE as an academic discipline. The research findings show that
+students needed face-to-face interaction to develop their essential skills.
+The study suggests that future research could further explore specific
+dimensions of the TLE program [28]. The study investigates how NC2
+certification helps improve job opportunities for workers in Cagayan de Oro
+City's tourism industry. The study investigates how staffing and job
+placement and promotion and job security and certification value and
+benefits affect their work performance. Research questions investigate
+three main areas which include the tourist industry demographic data of
+respondents and the TESDA Certificate employment assessment and the
+employment differences between various tourism certification holders. The
+
+research used a quantitative design which included surveys that targeted
+NC2-certified
+
+professionals
+
+and
+
+tourism
+
+industry
+
+employers
+
+[29].
+
+Successful workplace achievements require proper communication skills
+which
+
+Senior
+
+High
+
+School
+
+students
+
+need
+
+to
+
+acquire
+
+their
+
+Technical-Vocational-Livelihood competencies. The study investigates
+SHS-TVL students' communication methods and their practical work
+abilities through self-assessments and teacher evaluations which include
+data from 330 students and 108 teachers. The questionnaire assessed
+communication skills through five categories which included verbal
+communication, written communication, non-verbal communication, active
+listening, and problem-solving abilities while measuring work readiness
+indicators. The results show that students need to improve their
+communication skills because teachers found their non-verbal and written
+communication abilities to be below average. The research establishes a
+strong positive correlation between communication skills and work
+readiness, which identifies non-verbal communication as the top predictor
+of employment readiness through its statistical relationship (β = 0.27, p <
+0.001). The research demonstrates that dedicated communication training
+programs need to become part of the TVL curriculum because they require
+role-playing exercises and business partnerships to improve SHS-TVL
+graduates' communication skills and employment opportunities [30].
+
+Foreign Literature
+
+The literature review shows that educational areas now use chatbot technology
+and artificial intelligence (AI) systems to improve their learning processes.
+Through their ability to create customized educational materials and provide
+answers to questions and support administrative tasks, chatbots function as
+virtual assistants who deliver educational assistance to both teachers and
+students. The human role in teaching which includes emotional support and
+character development cannot be replaced by chatbots according to [31]. The
+research on second language acquisition shows that AI-driven chatbots help
+students develop language abilities through their personalized practice system
+and immediate feedback mechanism, but the technology needs to advance its
+capacity to handle complex dialogues and emotional situations that require
+ongoing research and human guidance according to [32]. Nursing education
+programs use chatbot-based systems to help students learn independently while
+they develop their clinical reasoning capabilities and their ability to operate
+specialized equipment such as mechanical ventilation according to [33]. AI tools
+which include chatbots enhance student engagement in secondary education
+while offering instant assessment capabilities, but schools must resolve three
+main challenges which include restricted technology access, insufficient teacher
+training, and potential negative effects on students critical thinking abilities
+according to [34]. The studies on tourism education show that universities need to
+create AI competency standards which should function as core curriculum
+requirements because these standards will boost students employability while
+developing educational programs that fulfill global digital market needs through
+
+faculty development and business collaborations according to [35]. The research
+shows that chatbots deliver several benefits to users because they establish
+custom-built experiences and provide continuous access to their services
+throughout the entire day. People frequently use these systems as personal
+assistants and shopping tools, but researchers have only begun to investigate
+their academic applications which support organizational activities during studies
+and courses and exams. The research creates an educational chatbot system
+which helps students and professionals through John Holland's framework and
+RIASEC assessment to identify their primary career-related personality traits [36].
+The study demonstrates that universities need to deliver top-notch consultation
+and information services which will help students achieve satisfaction during their
+admission process. The research introduces Dinus Intelligent Assistance (DINA)
+as a solution which uses knowledge-based machine learning technology to create
+a conversational agent that automatically handles student inquiries. The system
+was developed using data from a university guest book containing common
+admission questions and achieved a high success rate in answering sample
+queries correctly [37]. The research investigates how educational technology has
+developed new teaching methods through its quick growth which enables
+teachers to use virtual assistants and chatbots for better student learning
+outcomes. The study examines current educational chatbot developments while
+identifying critical challenges that affect their design process and their
+implementation in e-Learning systems. The authors present a framework which
+shows all critical factors that need to be addressed for successful chatbot
+
+implementation [38]. In this study, the advancement of AI technologies in the
+classroom
+
+requires
+
+a
+
+stronger
+
+connection to pedagogical perspectives,
+
+particularly concerning student motivation. The research used self-determination
+theory to study how teacher support impacts student expertise, which includes
+digital literacy and self-regulated learning, on their intrinsic motivation to use
+chatbots. The study found that chatbots help students learn better, but students
+need teacher help to use them properly because this assistance fulfills their need
+to connect with others [39]. The use of chatbots has grown rapidly across various
+fields, including healthcare, marketing, and education. The research work
+develops an architectural design together with a communication framework, which
+delivers precise information to students. The system implements natural language
+processing techniques together with domain ontologies to identify specific
+questions and deliver appropriate responses [40]. The research shows that
+chatbots now serve as the main method for delivering intelligent support which
+enables faster assistance through their ability to interpret user inquiries and
+provide immediate correct responses. The research presents a prototype
+developed for the educational domain specifically designed to support university
+students in their coursework. The system architecture uses natural language
+processing (NLP) and domain-specific ontologies to control communication while
+it identifies user inquiries for accurate response delivery [41]. The conversation
+practice is essential for language learners but remains difficult and expensive to
+access. The existing gap in language practice requires mobile chatbots as a
+practical solution, yet these chatbots have not yet developed into effective
+
+practice tools. The study showed that a student's previous language skills
+together with their experience of learning more through chatbot interactions which
+included communication challenges serve as two main factors that determine
+student interest and engagement in this study [42]. The educators can use
+chatbot technology and conversational agents for teaching and learning purposes
+because AI platforms have developed Google Dialogflow which enables users to
+design conversations without needing advanced programming skills. The research
+examines a case study where a rule-based chatbot was integrated into both
+online and face-to-face training environments to augment and address specific
+challenges encountered in teaching [43]. The chatbots serve as real-world
+demonstrations
+
+of
+
+new
+
+artificial
+
+intelligence
+
+technology
+
+which
+
+uses
+
+research-based algorithms to improve efficiency and communication and dialogue
+capabilities. The tools enable users to create human-like conversations by using
+either audio or text while the system operates through its ability to recognize
+specific words and make choices. Students can experience a guided yet
+interactive learning experience through chatbots which use basic flowchart
+systems to control their conversation management [44]. The rapid growth of AI
+and chatbots in education and research brings educational institutions three
+transformative opportunities which they must handle with their associated ethical
+challenges. The research demonstrates that educational institutions need to
+develop fresh assessment methods and research methodologies because
+technological improvements in their assessment systems and research processes
+require them to adapt through creative solutions instead of treating AI as a
+
+danger. Key considerations include the role of AI in supporting human judgment,
+the potential for misuse, and the necessity of establishing solid ethical values and
+legislation to protect educational systems [45].
+
+Foreign Studies​
+
+The existing research demonstrates that educational systems now use artificial
+intelligence systems, which include chatbots, to improve their teaching and
+learning processes and vocational training programs across various educational
+settings. The Philippine educational system conducted a qualitative study which
+found that AI chatbots assist pre-service Physical Education interns in developing
+essential teaching skills through their support of instructional planning and content
+organization and professional communication tasks which lead to increased
+confidence and understanding of concepts during practical work experience[46].
+The
+
+Vietnamese
+
+tourism education research shows that for AI-related
+
+competencies to meet global standards and enhance graduate employability in an
+automated sector, educational institutions must improve their curricula and train
+staff in digital skills while establishing partnerships with industry companies[47].
+The research review on AI applications in technical skills training shows that AI
+enables personalized learning and enhances vocational education systems in
+Industry 4.0 environments, but successful implementation requires organizations
+to solve data privacy issues and teacher training deficiencies and access
+disparities[48]. The descriptive study about Technology and Livelihood Education
+(TLE) shows that equipment and facility restrictions impede student achievement
+
+in practical subjects like cooking and horticulture despite teachers holding proper
+qualifications and receiving extensive training[49]. The research study on gamified
+chatbot usage in vocational certification programs shows that the combination of
+AI and gamification leads to higher student participation and satisfaction and
+improved learning results than conventional methods and non-gamified systems
+which make it an effective teaching method that can be expanded to wider
+use[50]. According to this research study a chatbot functions as a sophisticated
+software application which enables people to communicate with their digital
+devices while its main purpose is to deliver answers to student questions. The
+research shows that current chatbots develop security vulnerabilities which enable
+hackers to gain unauthorized access to information that passes through their
+systems. The study implements encryption as a security measure to stop
+unauthorized access to data during its transfer process and uses authentication
+session timeouts to limit user access time to the system [51]. The study defines a
+chatbot as a software program that creates human-like dialogue through Artificial
+Intelligence technology. The research presents the development of a student
+chatbot integrated with a website, utilizing Recurrent Neural Networks (RNN) for
+language processing and Convolutional Neural Networks (CNN) for image
+recognition. The system uses Dialogflow to establish intent representation and
+keyword matching which creates an interface that is both balanced and
+easy-to-use for all target users [52]. The research study used quasi-experimental
+methods to examine how a chatbot-based micro-learning system affected student
+learning motivation and academic performance. The results show that students
+
+who use the chatbot system demonstrate learning capabilities that match those of
+traditional classroom instruction. The study discovered that students who used the
+chatbot exhibited increased intrinsic motivation because they achieved their
+academic work through two main factors which involved their ability to make
+activity choices and their assessment of activity importance [53]. The research in
+question concerned how student perception and their assessment of a given unit
+varied when AI-driven chatbots were used. The created chatbot system used
+Dialogflow software together with Telegram instant messaging to deliver video
+content which helped students with their visual and auditory learning needs. The
+study results demonstrated that there was no academic performance difference
+between the two groups yet students who used the chatbot system experienced
+improved results in their online educational activities. The participants found the
+tool to be both enjoyable and helpful which enabled them to study and practice
+their learning material beyond classroom time [54]. The study demonstrates that
+Goal-Oriented Requirements Engineering methods which include the KAOS
+framework
+
+successfully
+
+enable
+
+stakeholder
+
+communication
+
+yet
+
+present
+
+implementation difficulties for beginner engineers. The research introduces
+KAOSbot, an AI-powered chatbot that uses Natural Language Processing (NLP)
+to act as a modeling assistant for these professionals. The study results showed
+that participants considered the tool straightforward to use while they found it
+beneficial, and they expressed strong intent to use the tool for requirements
+modeling in future projects [55]. The research demonstrates that using the
+"Einstein" chatbot system for physics instruction through technological platforms
+
+helps students who struggle to learn without teacher assistance. The study used
+the Multimedia Development Life Cycle (MDLC) framework which includes five
+stages: analysis, design, development, implementation and assessment to
+develop a mobile-based solution that meets practical requirements. The chatbot
+technology provides students with advanced communication support because
+smartphones serve as their main communication device which allows them to
+learn beyond the classroom [56]. This study, chatbots demonstrate significant
+potential as language learning tools, specifically for improving vocabulary
+acquisition. The research showed that chatbots enhanced student performance in
+both classroom-based and one-on-one tutoring environments. The analysis used
+Technology Acceptance Model (TAM) to show that perceived usefulness serves
+as the main factor which predicts students' tool usage intentions [57]. The
+research uses a web-based chatbot as a natural language dialogue system to
+help foreign language students who cannot practice with native speakers. The
+study found that students maintained interest in the system because they could
+access it at all times and they felt more confident using the non-judgmental
+computer program [58]. This research shows that students face difficulties when
+choosing their elective courses because they must handle academic interests and
+their actual graduation requirements and course availability and course level
+difficulties. The research presents EASElective as a new solution which works
+with existing advising methods and peer conversations to provide students with a
+natural language interface for their studies. The system manages a wide range of
+topics, from official course data to informal student opinions, utilizing components
+
+like intent detection and dialogue management to streamline the decision-making
+process [59]. This study, higher education institutions are increasingly utilizing
+chatbots as virtual assistants to help prospective students access information
+through natural language simulations. The research proposes a chatbot using a
+Retrieval Augmented Generation (RAG) approach, which combines cosine
+similarity search for document retrieval with an LLM for answer generation. The
+system enables users to enhance context understanding through its capability to
+store and retrieve previous chat interactions. Evaluation using metrics such as
+Recall, Precision, BLEU, and ROUGE scores confirms the effectiveness of the
+retrieval and generation modules [60].
+
+Synthesis
+
+The reviewed local and foreign literature and studies demonstrate that
+technical-vocational education together with emerging technology implementation
+serve as essential components which help students develop skills needed for
+employment and achieve career readiness. The educational systems which the
+researchers examined across all sources share a common goal to provide
+students with essential practical skills and industry-required competencies and
+knowledge. The initiatives face three major challenges which include skills
+mismatch problems and insufficient resources and gaps between program
+implementation and actual needs.
+
+Local studies and literature show a common research focus which shows
+Technical-Vocational
+
+Education
+
+and
+
+Training
+
+(TVET)
+
+and
+
+middle-skills
+
+development as critical factors that improve job prospects for people. The
+research demonstrates that competency-based training together with industry
+partnerships and hands-on learning experiences all contribute to better work
+readiness and employment outcomes for students. Student performance depends
+on teacher competence and facility availability and curriculum design and
+institutional support according to research findings. The research shows that local
+studies demonstrate ongoing problems which include schools with limited
+resources and inadequate facilities and educational programs that do not meet
+actual job market demands. The research shows that career guidance programs
+fail to help students because they do not provide useful information which
+students need to make better career choices.
+
+Researchers from local and international sources have identified technology as an
+essential component of educational systems. The combination of artificial
+intelligence and chatbot systems together with digital learning platforms
+represents a major breakthrough for enhancing educational environments. The
+systems
+
+create
+
+personalized
+
+learning
+
+pathways
+
+which
+
+deliver
+
+instant
+
+assessments and provide students with continuous assistance throughout their
+learning process. The studies demonstrate that interactive learning tools together
+with interactive methods which include gamification and microlearning can boost
+
+student engagement and motivation while improving their learning results in all
+educational settings.
+
+The research studies from local areas and international territories show different
+patterns of technological growth and deployment. The current state of TVET
+programs is the main focus of local studies which examine existing problems and
+suggest improvements through better curriculum design and facility development
+and teaching method enhancements. The research studies present new solutions
+through their introduction of gamified systems and AI-supported tools but these
+solutions still have limited functionality because they have not achieved
+widespread use. The foreign research literature shows better technology
+applications which include AI-driven chatbots and natural language processing
+systems and intelligent learning platforms. The systems create educational
+support through their capacity to deliver instant help and mimic human
+conversation and create customized learning experiences.
+
+Foreign studies concentrate more on educational systems through which AI
+technologies become integrated into their educational framework which lets them
+use AI for language instruction and vocational education and academic guidance.
+The research addresses multiple important topics which include data protection
+standards and ethical principles and system security measures and necessary
+
+teacher development for technology implementation. The local studies examine
+organizational and infrastructure problems at a higher rate than they investigate
+the ethical and technical difficulties which emerge from using advanced systems.
+
+The research gaps found in this study emerge from the combined analysis of
+existing literature and research studies. First, existing systems which use artificial
+intelligence or chatbot technology for educational purposes and employment
+guidance remain underdeveloped and lack practical application in the local area.
+Second, the research studies show the value of competency-based training which
+aligns with industry needs but intelligent technologies remain underutilized for
+process improvement. Third, there is insufficient focus on creating interactive,
+user-friendly, and accessible systems that cater to diverse learners and improve
+engagement. Fourth, local research does not provide sufficient study of system
+security issues and ethical data usage and implementation methods. The systems
+currently available need to become more extensive by integrating career guidance
+with skills assessment and learning support into one unified platform.
+
+The current research benefits from these results which demonstrate their value.
+The research shows that technical-vocational education requires improvements
+which need new technology to better prepare students for their future careers.
+The differences between two systems present an opportunity to transfer advanced
+
+technology solutions from international markets into the local environment. The
+researchers use existing gaps to create their proposed system which will enable
+them to design a solution that is both efficient and user-friendly.
+
+The synthesis demonstrates that educational and training system improvements
+have made substantial progress but require development of advanced integrated
+systems which use modern technological solutions. The current research aims to
+create a better system which improves student learning outcomes and develops
+their skills while preparing them for current workplace requirements by addressing
+existing research gaps.
+
+CHAPTER III
+METHODOLOGY
+
+Research Design
+This study employs the developmental research design in the creation of
+the proposed system entitled “TESDA-Bot: An Interactive Guide for TechVoc
+Students to Prepare for National Certificate (NCII) Exams.” This approach
+emphasizes the systematic planning, design, development, testing, and as well
+as the evaluation of the system to ensure that it is functional and effective in
+addressing the users needs.
+
+The software development methodology that will be used in this study will
+be the Agile Model. This model follows an iterative and flexible process that
+supports continuous improvement and regular feedback. This includes stages of
+planning, designing, development, testing, and ongoing revisions. Each phase
+allows adjustments to be made based on the user input and evaluation of the
+system before proceeding further.
+In addition, the descriptive method is utilized to assess the system’s
+performance through the evaluation of selected users. A survey questionnaire is
+administered to measure the system in terms of usability, reliability, efficiency,
+and functionality.
+Sampling Technique
+In this study, the researchers will use purposive sampling to choose the
+sample. Purposive sampling is a technique to choose samples based on specific
+consideration [61]. The respondents selected are knowledgeable about the
+system, an actual user of the TESDA-Bot, and belong to the target group,
+specifically, the Technical-Vocational students who are preparing for the National
+Certificate (NCII) examinations. This ensures that the data collected is reliable
+and directly related to the objectives of the study.
+Participants of the Study
+The
+
+participants
+
+of
+
+this
+
+study
+
+consist
+
+of
+
+Tech‑Voc
+
+(Technical‑Vocational–Livelihood) students who are preparing for or have recently
+taken National Certificate II (NCII) certification exams under the TESDA
+framework. These include senior high school TVL students enrolled in
+NCII‑aligned programs (Computer Systems Servicing NCII, Bread and Pastry
+Production NCII, Housekeeping NCII, Automotive Servicing NCII, etc.) and, where
+applicable, TESDA TVET trainees from accredited technical‑vocational institutions
+
+who are at the level where they are expected to undergo written and practical
+competency assessments.
+Participants will be selected using purposive sampling to ensure that they
+have actual exposure to NCII‑related competencies and are in the stage of exam
+preparation or post‑exam reflection. Their role in the study will vary: some will act
+as respondents by answering surveys on their preparedness, learning behavior,
+and satisfaction with TESDA‑Bot, while others may serve as interview or
+focus‑group participants to provide deeper insights into how an interactive
+chatbot‑based tool can support their review, practice, and confidence in facing
+NCII assessments.
+
+Research Locale
+This study will be conducted in selected Technical‑Vocational–Livelihood
+(TVL) tracks within a senior high school (or TVET institution) in Metro Manila,
+National Capital Region, Philippines, where Tech‑Voc students are enrolled in
+NCII‑aligned programs (Computer Systems Servicing NCII, Automotive Servicing
+NCII, Bread and Pastry Production NCII, or similar tracks). The physical setting
+includes classrooms, computer laboratories, and guidance or training offices
+where students receive TVL instruction and exam‑preparation support, and where
+they will interact with or evaluate TESDA‑Bot as an interactive review guide.
+
+In addition, a virtual component will be employed through an online or
+school‑hosted platform where the TESDA‑Bot chatbot is accessed, allowing
+students to use the tool during or after class sessions. This mixed physical‑virtual
+
+locale is chosen because it reflects the real‑world environment where Tech‑Voc
+learners prepare for NCII assessments, making it suitable for observing how an
+interactive guide can support their review, practice, and confidence before the
+actual competency exams.
+
+Research Instrument
+The proponents used a data collection instrument to gather information.
+The researchers will use a survey questionnaire as the primary research
+instrument to evaluate the proposed system. A Google Form survey will be
+utilized to collect data, featuring questions that employ a Likert scale to measure
+respondents' attitudes and perceptions. The survey questionnaire is distributed to
+selected participants after they use the system.
+The questionnaires will use a 5-point Likert scale in interpreting the
+respondents’ level of agreement with different aspects of the system. This
+includes measuring their perceptions of the system’s functionality, usability,
+reliability, and as well as efficiency. Each scale point allows the respondents to
+express their degree of agreement, ranging from strong disagreement to strong
+agreement, which will provide a more detailed and accurate assessment of the
+system’s overall performance and effectiveness.
+
+Data Gathering Procedure
+The data gathering procedure for TESDA-Bot: An Interactive Guide for
+TechVoc Students to Prepare for National Certificate (NC II) Exams will be
+conducted in a systematic and ethical manner to ensure that the information
+
+collected was relevant, accurate, and reliable. The researchers first identified the
+target respondents, which included TechVoc students, teachers, and other
+individuals who could provide meaningful input regarding NC II exam preparation
+and the support features needed in the proposed system. After obtaining approval
+from the concerned authorities, the researchers explained the purpose of the
+study, the nature of the participants’ involvement, and the confidentiality of their
+responses before securing their consent.
+Data were gathered through surveys, interviews, and evaluation forms to
+determine the students’ preparation needs, learning difficulties, and preferred
+forms of interactive support. The information collected served as the basis for
+identifying the essential features of the system, such as review assistance,
+practice questions, exam guidance, and progress tracking. After the prototype
+was developed, selected respondents evaluated the system in terms of usability,
+functionality, and effectiveness. Their feedback was then analyzed and used to
+improve and refine the system before final implementation. Throughout the
+process, the researchers maintained confidentiality and used the data solely for
+academic purposes.
+
+System Development Process
+The proposed TESDA-Bot: An Interactive Guide for TechVoc Students to
+Prepare for National Certificate (NC II) Exams will follow the Agile SDLC
+methodology, which emphasizes iterative development, continuous testing, and
+
+gradual improvement. The process begins with requirements gathering, where the
+needs of TechVoc students and other stakeholders are identified. This is followed
+by system design, development, testing, and deployment. Each phase is
+completed in short cycles or sprints, allowing the researchers to incorporate
+feedback and make necessary revisions throughout the development process.
+Through this approach, the system is expected to become a user-friendly and
+effective interactive guide for NC II exam preparation.
+
+System Architecture
+
+Figure 2. TESDA-Bot System Architecture
+The TESDABot system architecture shows a web-based platform where a
+TechVoc Student interacts with the TESDABot Web Application as the main entry
+point for learning and assessment activities. The application connects to core
+services that handle authentication, user management, and assessment
+scheduling, while the chatbot engine provides a conversational interface for
+
+questions and guidance. It also includes an NCII Assessment Engine for
+generating exam questions and simulations, and an Analytics & Progress
+Tracking component that monitors NCII readiness and performance reports. All of
+these functions rely on the TESDABot Database, which stores and retrieves user
+data, assessment records, chatbot interactions, and progress information, making
+the system a complete and integrated support tool for TechVoc students preparing
+for NCII certification.
+
+Data Analysis
+The data analysis for TESDA-Bot: An Interactive Guide for TechVoc
+Students to Prepare for National Certificate (NC II) Exams explains how the
+collected responses are processed, interpreted, and presented to determine the
+effectiveness of the proposed system. After the data are gathered, the
+researchers will organize and encode the responses to prepare them for analysis.
+The results from surveys, interviews, and system evaluations will be summarized
+using descriptive statistics such as frequency, percentage, weighted mean, and
+standard deviation, depending on the type of information collected.
+The analysis will focus on the system’s usability, functionality, accessibility,
+and usefulness in helping TechVoc students prepare for NC II examinations. For
+rating-scale responses, the weighted mean will be used to determine the overall
+evaluation of the system. The findings will be presented through tables and
+narrative interpretation to make the results clear and understandable. Through
+this process, the researchers will identify the strengths and weaknesses of the
+
+proposed system and determine whether it effectively supports students in their
+exam preparation and learning needs.
+
+Data Flow Diagram
+
+Figure 3. Data Flow Diagram Level 0
+The TESDA-Bot Data Flow Diagram illustrates a continuous exchange of
+information between the TechVoc Student and the TesdaBot system. The process
+begins when the student provides login credentials and specific learning
+requirements, which the system uses to deliver tailored NCII study guides and
+interactive materials. As the student engages with the bot by submitting practice
+exam answers, the system processes these inputs to return personalized
+feedback, hints, and detailed progress reports. This circular flow ensures that the
+student receives a customized learning experience based on their performance
+and real-time data processing within the bot.​
+
+​
+
+​
+
+​
+​
+
+​
+
+​
+
+Figure 4. Data Flow Diagram Level 1
+
+​
+​
+​
+
+The TESDA-Bot Data Flow Level 1 system establishes a systematic path
+
+which progresses from user identification to academic assistance based on data.
+The process starts at Authentication & Profile Management (1.1) because it
+verifies user credentials through the Student Profile (D1) system to create a safe
+personalized environment. The Course Selection (1.2) process becomes the
+
+access point for NCII Course (D3) content after the system verifies the student's
+identity because it provides them with study material that corresponds with their
+academic program. The student uses Practice Quizzes & Assessment (1.3) which
+causes the system to switch from delivering content to measuring student results
+when it stores their initial assessment scores in the Assessment Result (D5)
+database. The Exam Readiness (1.4) process uses the collected performance
+data to generate Performance Analytics (D2) which converts raw quiz scores into
+usable information that appears on the student readiness dashboard. The
+complete process uses AI Tutor (1.5) which utilizes data from Chat Session (D4)
+archives to deliver precise educational assistance while maintaining ongoing
+student technical support through flexible data-driven dialogue. ​
+
+​
+
+System Flow Chart
+
+Figure 5. TESDA-Bot System Flow Chart
+The TESDA-Bot system flowchart outlines a guided learning process
+that begins when a user opens the app. Users without an account undergo
+registration, while those with an account proceed to login, both paths
+leading to credential validation. After successful validation, users select an
+NCII course, access related competencies and study modules, and take a
+practice quiz with AI-generated feedback. Following the quiz, the system
+prompts the user for AI tutor help; if requested, users receive assistance
+before returning to the modules. If not needed, progress and readiness
+scores are displayed. The user is then asked if they wish to continue
+learning, which can lead back to the study stage or to logging out,
+concluding the session.
+Use Case Diagram
+
+Figure 6. Use Case Diagram
+The TechVoc Student accesses the TESDA-Bot by logging in or
+registering, then selects an NCII course to access competency modules.
+The system helps identify weak areas for focused study and offers practice
+quizzes with AI-powered feedback on performance. Students can chat with
+an AI tutor for guidance and track their exam readiness through progress
+estimates and performance analytics, enhancing understanding of their
+strengths and weaknesses.
+Entity Relationship Diagram
+
+The ERD for TESDA-Bot depicts an innovative and unique
+ecosystem aimed at facilitating the preparation of Technical-Vocational
+students for NCII exams. In terms of system design, the architecture starts
+with the User entity, which distinguishes between two users based on their
+roles. The Student entity has an immediate association with the Courses
+entity since each student is enrolled in courses that prepare them for their
+chosen trade or qualifications
+
+The core of the learning process lies with the Assessment entity
+because this is what makes the exam preparation possible. An assessment
+is made up of several Questions, which include the corresponding Choices
+to make a proper assessment test. Through interactions with the bot,
+
+students' User Responses can be tracked to give the user an insight into
+their progress and results in the form of a new entity – the Result.
+Ethical Considerations
+In an IT research or capstone project, ethical considerations play a
+significant role in ensuring that the project is conducted responsibly and
+aligns with professional and societal standards. Here are key ethical
+considerations to keep in mind: (select only which is applicable on your
+project)
+
+1. Data Privacy and Confidentiality
+●
+
+Sensitive Information Protection: Researchers must ensure that
+
+any personal or sensitive data (e.g., health, financial, or identifiable
+information) is protected and handled with strict confidentiality.
+●
+
+Data Anonymization: If the research involves user data, it's crucial
+
+to anonymize it to prevent identification of individuals.
+●
+
+Compliance with Data Protection Laws: Adherence to laws such
+
+as GDPR (General Data Protection Regulation) or HIPAA (Health
+Insurance Portability and Accountability Act) is essential when handling
+sensitive data.
+2. Informed Consent
+●
+
+Participants’ Knowledge: When involving human subjects in your
+
+research (e.g., surveys, testing), it is important to obtain their informed
+
+consent. Participants should be fully aware of what the study involves and
+any risks.
+●
+
+Voluntary Participation: Participation should be voluntary, without
+
+any form of coercion or undue influence, and subjects should be allowed to
+withdraw at any time.
+3. Intellectual Property and Plagiarism
+●
+
+Original Work: Capstone projects should avoid plagiarism, ensuring
+
+proper citation of sources and acknowledgment of previous research.
+●
+
+Copyright and Licensing: Use of third-party software, libraries, or
+
+tools should respect copyright and licensing agreements.
+4. Social Impact and Responsibility
+●
+
+Impact on Society: The potential societal effects of the project
+
+should
+
+be
+
+evaluated.
+
+Avoid
+
+projects
+
+that
+
+could
+
+have
+
+negative
+
+consequences, such as violating human rights or enabling harmful
+practices.
+●
+
+Sustainability and Inclusivity: Consider environmental
+
+sustainability and inclusivity, ensuring that technology developed benefits a
+broad range of users without discrimination.
+5. Cybersecurity and Protection from Harm
+
+●
+
+Ensuring Security: If the project involves software development,
+
+ethical consideration must include building secure and resilient systems to
+protect users from cyber threats.
+●
+
+Avoiding Harm: Projects should avoid causing harm to individuals or
+
+systems, whether through negligence, vulnerabilities, or malicious design.
+6. Bias and Fairness
+●
+
+Algorithmic Bias: If the project involves algorithms, ensure that they
+
+are fair and unbiased. Biased systems can lead to discriminatory
+outcomes, so fairness should be a priority.
+●
+
+Transparency: Be transparent about how data is used and analyzed
+
+to prevent hidden biases from affecting results.
+7. Accountability and Integrity
+●
+
+Accuracy in Reporting: Researchers should report findings
+
+honestly, without fabricating, falsifying, or misrepresenting data or results.
+●
+
+Responsibility for Actions: Take responsibility for the ethical
+
+conduct of your research, including acknowledging any limitations or
+weaknesses in the study.
+8. Dual-Use Technology
+●
+
+Potential for Misuse: Consider if the technology or research
+
+developed could be used for both beneficial and harmful purposes, and
+take steps to mitigate any risks of misuse.
+
+9. Collaboration Ethics
+●
+
+Equal Credit: In collaborative projects, ensure that all contributors
+
+receive appropriate credit, and no one’s contributions are overlooked.
+●
+
+Conflict of Interest: Disclose any conflicts of interest, such as
+
+personal, financial, or professional connections that could affect the
+research outcomes.
+These ethical considerations ensure that an IT capstone project or
+research
+
+is
+
+conducted
+
+responsibly,
+
+safeguarding
+
+individuals, society, and the broader tech community.
+
+​
+
+REFERENCES
+
+the interests of
+
+[1] Asis, L. C. (2020b). Employability of Senior High School Graduates
+under TECHVOC Track with National Certification in Graphics and
+Animation from TESDA. The Educational Review USA, 4(12), 219–224.
+[2] Tiyanes, T. M. M., & Ponsades, O. P. (2024). EMPLOYMENT
+JOURNEY OF TECHNICAL TEACHERS: STORIES TO TELL. European
+Journal of Social Sciences Studies, 10(3).
+[3] Alinea, Jess Mark & Garcia, Christian & Noblefranca, Sheila & Lagado,
+Suzette. (2024). Employability Skills of Senior High School Tech-Voc
+Students: A Measure of Industry Preparedness.
+[4] Cao-Wat, K. C., Invierno, B., & Manuel, J. (2026). BRIDGING LOCAL
+STANDARDS AND GLOBAL COMPETENCIES: ASSESSING CONTACT
+CENTER SKILLS BASED ON TESDA NC II FRAMEWORK.
+ShodhGyan-NU Journal of Literature and Culture Studies, 4(1), 61–67.
+[5] Wacas, Ronald. (2020). Effectiveness of E-Learning Technology on The
+Performance of the CSS NC II Trainees (Computer Systems Servicing) of
+Tesda Accredited Training Centers in TESDA-Kalinga. International Journal
+of English Literature and Social Sciences. 5. 2398-2405.
+10.22161/ijels.56.77.
+[6] R. Monteverde, I. Mejia, L. Dasas, S. Bazer, C. M. Garcia, and C.
+Aquino, “Assessing the current and future middle skills in the Philippines:
+Inputs for Policy agenda,” Aug. 2025. doi: 10.62986/dp2025.22.
+
+[7] C. A. L. Jaca, F. B. Javines Jr., and JACA & JAVINES JR., “Hybrid
+Collaborative Model of Technical-Vocational-Livelihood (TVL) track in
+senior high school in the Philippines,” journal-article, 2022.
+[8] M. R. Caig and Pagbilao National High School, “Cultivating Lifelong
+Learners through Revitalized Technology Livelihood Education and
+Technical Vocational Livelihood Programs for Public Secondary Schools,”
+journal-article, 2022.
+[9] E. S. Dungca, “Work Readiness of Industrial Arts Graduates of
+Technical Vocational: A Sequential Explanatory Study,” GEAPHEI
+Research Publication, Nov. 2025, [Online]. Available:
+https://geaphei.org/viewArticle.php?id=18
+[10] M. B. BULANADI, “EXTENT OF IMPLEMENTATION OF
+COMPETENCY-BASED PROGRAM OF TECHNICAL VOCATIONAL
+EDUCATION IN a PUBLIC HIGH SCHOOL: BASIS FOR SKILLS
+DEVELOPMENT PERFORMANCE,” 2014.
+[11] S. S. Lorenzo and J. M. Claravall, “LEVEL OF COMPETENCY OF
+SENIOR HIGH SCHOOL STUDENTS UNDER STRENGTHENED
+TECHNICAL VOCATIONAL EDUCATION PROGRAM (STVEP) AND
+FACTORS AFFECTING IT: a BASIS FOR ENHANCEMENT PROGRAM,”
+Open MIND, Mar. 2026, doi: 10.5281/zenodo.18908009.
+[12] F. G. Ramos PhD, “An Evaluation of the Technical Vocational
+Livelihood Track in Public Senior High Schools in the Division of Batangas:
+
+Basis for an enhancement program,” 2021. doi:
+10.6007/IJARPED/v10-i2/10269.
+[13] A. H. Dumaplin and Sorsogon State University, “Factors that influence
+technical vocational students’ choice of specialization in relation to their
+academic performance in Deped Division of Sorsogon,” 2024.
+[14] J. T. Maestrado and J. D. Bucar, “Career Guidance Advocacy Program
+and the Grade 10 Completers’ Career Choice,” International Journal of
+Multidisciplinary Applied Business and Education Research, vol. 5, no. 2,
+pp. 513–527, Feb. 2024, doi: 10.11594/ijmaber.05.02.12.
+[15] R. I. Navasca, M. G. Navasca, and N. B. C. Tugelida, “Technology and
+Livelihood Education in Northern Philippines: A Comprehensive case study
+of DMMMSU- NLUC,” Mar. 31, 2025.
+[16] C. B. Chua, “Rationalizing TVET provision and support for enhanced
+public‑private complementarity,” Ateneo and EDCOM‑II Research
+Fellowship Paper no. 14, Dec. 2025.
+[17] K. C. Cao‑wat, B. O. Invierno, and J. B. Manuel, “Bridging local
+standards and global competencies: Assessing contact center skills based
+on TESDA NC II framework,” ShodhGyan‑NU: J. Lit. Cult. Stud., vol. 4, no.
+1, pp. 61–67, 2026.
+[18] MR. M. R. Gualiza, “Teachers’ qualification, facilities and competencies
+of the Grade 7 students in Technology and Livelihood Education,” Turk.
+Online J. Design Art Commun. (TOJDAC), vol. 7, Special Issue –
+DCMSPCL, pp. 106–114, 2024.
+
+[19] A. C. Orbeta and J. P. P. Corpus, “The national system of technical
+vocational education and training,” Philippine Inst. Dev. Stud. (PIDS)
+Discuss. Pap. Ser., no. 1607, 2016.
+[20] J. P. Antonio, “Utilization, challenges, and opportunities of AI‑driven
+English language development software of language teachers,” Int. Online
+J. Educ. Res. (IOER‑IMRJ), 2024.
+[21] B. J. Dr. Pasion, “Innovation and Digitalization Strategy in Technical
+Education: Assessment of an ergonomic universal working Table for
+optimized instructional performance,” Questa Soft, 2025.
+[22] M. A. T. Mercado, “CSS QUEST: GAMIFYING COMPUTER SYSTEM
+SERVICING MODULE USING GAMIFIED PROGRESS TRACKING AND
+INTERACTIVE STORYTELLING ALGORITHM FOR GRADE 12
+STUDENTS IN CALAMBA CITY,” International Journal of Advanced
+Research in Computer Science, vol. 14, no. 03, pp. 60–79, Jun. 2023, doi:
+10.26483/ijarcs.v14i3.6996.
+[23] M. C. A. Elli and J. D. Ricafort, “Competencies of Grade VI teachers in
+Technology and Livelihood Education (TLE).”
+[24] I. Marcojos-Canon, “Linking the DOTS of STEM instruction in private
+higher education institution,” Jul. 2018.
+[25] A. Ferrer and Polytechnic College of Botolan, “Status of
+implementation of Technical-Vocational-Livelihood (TVL) track in secondary
+schools in the District of Botolan,” 2021.
+
+[26] J. C. Nicodemus, “QUALITATIVE EXPLORATION OF THE
+TRANSITION EXPERIENCES OF THE SENIOR HIGH MODEL SCHOOL
+GRADUATE IN REGION IV-CALABARZON,” 2021.
+[27] E. A. Cundangan, “THE RELATIONSHIP OF THE SENIOR HIGH
+SCHOOL TRACKS AND STRANDS, AND THE CURRICULUM EXITS OF
+THE GRADUATES,” journal-article, Oct. 2023.
+[28] M. J. B. Mamayabay and M. R. T. Quilestino, “MOTIVATIONS AND
+CHALLENGES IN SPECIALIZING TECHNOLOGY AND LIVELIHOOD
+EDUCATION: A PHENOMENOLOGICAL INQUIRY,” European Journal of
+Education Studies, vol. 11, no. 2, Feb. 2024, doi:
+10.46827/ejes.v11i2.5205.
+[29] F. I. V. CONSOLACION Main Author, B. J. A. COSOLACION, and E. T.
+MAAGAD, “COMPETITIVENESS OF TESDA NC II CERTIFICATION IN
+TOURISM SECTOR,” ZAIN Publications, research paper, Mar. 2025. doi:
+10.47760/cognizance.2025.v05i07.003.
+[30] Yoshida, Yoshimitsu & Guzman, Rodel. (2025). Communication Skills
+and Work Readiness of Senior High School
+Technical-Vocational-Livelihood Track Students. Journal of Interdisciplinary
+Perspectives. 3. 10.69569/jip.2025.152.
+[31] Fitria, T. N., Simbolon, N. E., & Afdaleni, A. (2023). Chatbots as online
+chat conversation in the education sector. International Journal of
+Computer and Information System (IJCIS), 4(3), 93–104.
+
+[32] W. Wiboolyasarin, “AI‑driven chatbots in second language education,”
+Comput. Assist. Lang. Learn., 2025.
+[33] C. Fernandez, M. Balijon, and I. Ancho, “Career preferences of Filipino
+senior high school students,” CTU Journal of Innovation and Sustainable
+Development, vol. 15, no. 3, pp. 81–91, Nov. 2023, doi:
+10.22144/ctujoisd.2023.053.
+[34] C. D. Aguilar, “Integrating artificial intelligence in secondary English
+instruction: Regulatory practices and issues encountered,” Int. J. Stud.
+Engl. Lang. Literat. (INJOSEDU), vol. 13, no. 10, pp. 2441–2458, Oct.
+2025.
+[35] J. D. Cruz, M. A. L. Santos, and R. G. Manligoy, “AI‑based career path
+recommender system for senior high school students using multi‑label
+classification,” Digital Systems and Management (DSM), vol. 2, no. 4, pp.
+102–109, 2025.
+[36] O. Zahour, E. H. Benlahmar, A. Eddaoui, H. Ouchra, and O. Hourrane,
+"A system for educational and vocational guidance in Morocco: Chatbot
+E-Orientation," Procedia Computer Science, vol. 176, pp. 2470-2477, 2020
+[37] M. A. Al-Ghamdi, "An Intelligent Career Counseling System for Saudi
+Students Based on Career Ontologies," in Proc. 2018 Int. Conf. Smart
+Commun. Netw. Technol. (SaCoNeT), 2018, pp. 1-6
+[38] A. Tlili, B. Chang, T. He, F. Huang, and Z. Liu, "AMChat: An AI-based
+Minecraft Chatbot for Assisting Student Game Design," in Blended
+
+Learning: Education in a Smart Learning Environment, W. W. K. Ma et al.,
+Eds. Cham, Switzerland: Springer, 2019, pp. 565-574
+[39] T. K. F. Chiu and B. L. Moorhouse, "Teacher support and student
+motivation to learn with Artificial Intelligence (chatbot)," Interact. Learn.
+Environ., 2023
+[40] M. A. Al-Ghamdi, "Intelligent Career Counseling Chatbot for Saudi
+Students Using Career Ontologies," in Advances in Intelligent Systems and
+Computing, A. Abraham et al., Eds. Cham, Switzerland: Springer, 2019, pp.
+301-310
+[41] T. B. Prassetiyo et al., "Intelligent Career Counseling Chatbot for Saudi
+Students Using Career Ontologies," in Advances in Intelligent Systems and
+Computing, A. Abraham et al., Eds. Cham, Switzerland: Springer, 2019, pp.
+301-310
+[42] W. F. M. Heijnen and A. A. Verbraeck, "The design of a chatbot for
+supporting
+
+an
+
+interactive
+
+e-learning
+
+environment
+
+for
+
+introductory
+
+programming courses," Computers & Education, vol. 139, pp. 82-98, Oct.
+2019.
+[43] M. A. Al-Ghamdi et al., "Intelligent Career Counseling System for
+Saudi Students Using Career Ontologies," in Proc. 2020 IEEE Int. Conf.
+Innov. Intell. Syst. Appl. (INISTA), 2020, pp. 1-6
+[44] J. Walton, R. L. Walton, and A. Lodge, "Qualitative exploration of
+digital chatbot use in medical education: A pilot study," Digital Health, vol.
+7, 2021.
+
+[45] C. Kooli, "Chatbots in Education and Research: A Critical Examination
+of Ethical Implications and Solutions," Sustainability, vol. 15, no. 7, Art. no.
+5614, Apr. 2023
+
+[46] S. Bourdages, “Utilisation, défis et perspectives de l’utilisation de
+logiciels de développement de la langue anglaise soutenus par
+l’intelligence artificielle par les enseignants de langue,” J. des technologies
+de l’apprentissage (JTL), vol. 19, no. 4, 2025.
+[47] V. Pham and T. P. T. Thuy, “Integrating artificial intelligence in
+undergraduate tourism education to meet international standards,” DS J.
+Multidiscip., vol. 2, no. 4, pp. 17–24, 2025
+[48] M. A. L. Santos and J. P. Capuno, “Navigating futures: Examining how
+the addition of senior high school tracks influenced postsecondary
+aspirations among education majors in the Philippines,” Asia Dev. Rev.,
+2025.
+[49] M. R. Gualiza, “Teachers’ qualification, facilities and competencies of
+the Grade 7 students in Technology and Livelihood Education,” Turk.
+Online J. Design Art Commun. (TOJDAC), vol. 7, no. DCMSPCL, pp.
+106–114, 2024.
+[50] A. B. Researcher, C. D. Educator, and E. F. Scholar, “Title of the
+article,” Adv. Multiling. Lang. Educ. Res. (AMLER), vol. 1, no. 1, pp. 1–10,
+2026.
+
+[51] S. S. Alotaibi and A. M. Alotaibi, "Developing an ontology-based
+intelligent career counseling system for Saudi Arabian students," in Proc.
+2018 IEEE Glob. Eng. Educ. Conf. (EDUCON), 2018, pp. 811-816
+[52] M. A. Al-Ghamdi et al., "An Intelligent Career Counseling System for
+Saudi Students Based on Career Ontologies," in Proc. 2018 Int. Conf.
+Smart Commun. Netw. Technol. (SaCoNeT), 2018, pp. 1-6
+[53] T. K. F. Chiu, "Digital support for student engagement in blended
+learning based on Self-Determination Theory," J. Res. Innov. Teach.
+Learn., 2021 , vol. 15, no. 1, pp.
+[54] A. Deveci Topal, C. D. Eren, and A. Kolburan Geçer, "Chatbot
+application in a 5th grade science course," Education and Information
+Technologies, vol. 27, no. 2, pp. 2021-2042, 2022.
+[55]A. Tlili, O. Shehata, M. A. Adarkar, and D. Liu, "Is Metaverse in
+education living up to the hype? A critical review of educational Metaverse
+and future research agenda," in Emerging Technologies for Education, L.
+H. Wong et al., Eds. Cham, Switzerland: Springer, 2019, pp. 394-403
+[56] T. B. Prassetiyo and A. Author, "Career guidance system development
+using AI and multiple intelligence assessment," J. Inf. Syst. Eng., vol. 22,
+no. 1, pp. 101-145, 2022.
+[57] T. K. F. Chiu, "The effects of using a chat bot on student learning
+outcomes and goal attainment in problem-based learning," J. Res. Innov.
+Teach. Learn., vol. 14, no. 1, pp. 104-116, 2021.
+
+[58] H. L. Chen, G. V. Widarso, and H. Sutrisno, "A ChatBot for Learning
+Chinese: Learning Achievement and Technology Acceptance," J. Educ.
+Comput. Res., vol. 58, no. 6, pp. 1123-1149, 2020.
+[59]T. B. Prassetiyo and A. Author, "Career Guidance System Development
+Using AI and Multiple Intelligence Assessment," J. Inf. Syst. Eng., vol. 7,
+no. 25, pp. 10114509, 2022.
+[60]A. A. Alghamdi, B. B. Alghamdi, and C. C. Alghamdi, "NextGen Career
+Advisor: Hybrid AI System for Personalized Student Guidance Using
+Multimodal Data Fusion," in Proc. 2024 IEEE Int. Conf. Educ. Technol.
+(ICETC), 2024, pp. 1-8
+
+
