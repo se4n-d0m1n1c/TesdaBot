@@ -42,7 +42,7 @@ const Dashboard = () => {
   return (
     <div className="animate-fade-in">
       {/* Welcome Header */}
-      <div className="d-flex justify-content-between align-items-center mb-5">
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4 mb-md-5">
         <div>
           <h1 className="fw-bold mb-1" style={{ color: 'var(--tb-text-heading)' }}>Welcome back, {fullName}!</h1>
           <p className="text-muted mb-0">{nciiTrack} • {overallReadiness}% Readiness</p>
@@ -54,8 +54,8 @@ const Dashboard = () => {
       </div>
 
       {/* Progress Overview Grid */}
-      <div className="row g-4 mb-5">
-        <div className="col-md-4">
+      <div className="row g-3 g-md-4 mb-4 mb-md-5">
+        <div className="col-12 col-md-4">
           <div className="tb-card p-4 h-100">
             <div className="d-flex align-items-center gap-3 mb-3">
               <div className="bg-primary bg-opacity-10 p-3 rounded-3" style={{ color: 'var(--tb-primary)' }}>
@@ -82,7 +82,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-12 col-md-4">
           <div className="tb-card p-4 h-100">
             <div className="d-flex align-items-center gap-3 mb-3">
               <div className="bg-warning bg-opacity-10 p-3 rounded-3" style={{ color: 'var(--tb-accent)' }}>
@@ -104,7 +104,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-md-4">
+        <div className="col-12 col-md-4">
           <div className="tb-card p-4 h-100">
             <div className="d-flex align-items-center gap-3 mb-3">
               <div className="bg-info bg-opacity-10 p-3 rounded-3 text-info">
@@ -124,9 +124,9 @@ const Dashboard = () => {
       </div>
 
       {/* Quick Actions */}
-      <h4 className="fw-bold mb-4" style={{ color: 'var(--tb-text-heading)' }}>Continue Learning</h4>
-      <div className="row g-4">
-        <div className="col-md-6">
+      <h4 className="fw-bold mb-3 mb-md-4" style={{ color: 'var(--tb-text-heading)' }}>Continue Learning</h4>
+      <div className="row g-3 g-md-4">
+        <div className="col-12 col-md-6">
           <div className="tb-card p-4 d-flex flex-column h-100 border-start border-4 border-primary">
             <div className="d-flex justify-content-between align-items-start mb-3">
               <div>
@@ -144,7 +144,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="col-md-6">
+        <div className="col-12 col-md-6">
           <div className="tb-card p-4 d-flex flex-column h-100 border-start border-4" style={{ borderLeftColor: 'var(--tb-accent) !important' }}>
             <div className="d-flex justify-content-between align-items-start mb-3">
               <div>
