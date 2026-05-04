@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { HelpCircle, CheckCircle, XCircle, ArrowRight, Lightbulb, Loader2, AlertCircle } from 'lucide-react';
 import useSWR from 'swr';
 import { supabase } from '../../lib/supabaseClient';
@@ -38,7 +39,7 @@ const QuizEngine = () => {
     if (isAnswered) return;
     setSelectedOption(idx);
     setIsAnswered(true);
-    if (idx === currentQuestion.correctAnswer) {
+    if (idx === currentQuestion.correct_option_index) {
       setScore(score + 1);
     }
   };
@@ -62,8 +63,8 @@ const QuizEngine = () => {
             {
               user_id: user.id,
               ncii_track: nciiTrack,
-              module: 'Practice Exam', // In a real scenario, group questions by module
-              score: score + (selectedOption === currentQuestion.correct_option_index ? 1 : 0),
+              module: selectedModule || 'Full Mock Exam',
+              score: score,
               total_questions: questions.length
             }
           ]);

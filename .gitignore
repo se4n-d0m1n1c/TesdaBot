@@ -26,3 +26,4 @@ supabase/migrations/00002_ncii_tracks.sql
 supabase/migrations/00003_streak_tracking.sql
 supabase/migrations/00004_modules_table.sql
 supabase/migrations/00005_study_time.sql
+supabase/migrations/00006_module_questions.sql
