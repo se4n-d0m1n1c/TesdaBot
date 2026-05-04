@@ -1,7 +1,8 @@
-import React, { Suspense, lazy, useState } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { supabase } from './lib/supabaseClient';
 
 // Vercel React Best Practices: bundle-dynamic-imports
 const Auth = lazy(() => import('./pages/Auth'));
@@ -9,6 +10,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const ChatbotInterface = lazy(() => import('./components/Chatbot/ChatbotInterface'));
 const QuizEngine = lazy(() => import('./components/Assessment/QuizEngine'));
 const Profile = lazy(() => import('./pages/Profile'));
+const Modules = lazy(() => import('./pages/Modules'));
 
 // A simple loading fallback
 const PageLoader = () => (
@@ -31,8 +33,29 @@ const PrivateRoute = ({ children }) => {
 
 // Layout Wrapper
 const AppLayout = ({ children }) => {
+  const { user, signOut } = useAuth();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const { signOut } = useAuth();
+  const location = useLocation();
+
+  // Session tracking for Study Hours
+  useEffect(() => {
+    if (!user) return;
+    
+    const interval = setInterval(async () => {
+      // Only count if the user is actively studying (Quiz or Chat) and tab is visible
+      const isStudying = ['/quiz', '/chat'].includes(location.pathname);
+      
+      if (document.visibilityState === 'visible' && isStudying) {
+        try {
+          await supabase.rpc('increment_study_time', { minutes_to_add: 1 });
+        } catch (err) {
+          console.error("Failed to increment study time", err);
+        }
+      }
+    }, 60000); // Check every 60 seconds
+
+    return () => clearInterval(interval);
+  }, [user, location.pathname]);
   
   const handleSignOut = async (e) => {
     e.preventDefault();
@@ -54,6 +77,7 @@ const AppLayout = ({ children }) => {
           <div className={`navbar-collapse d-lg-flex ${isNavOpen ? 'nav-mobile-menu open' : 'nav-mobile-menu'} d-lg-block w-100`}>
             <div className="navbar-nav ms-auto gap-2 gap-lg-4 text-center text-lg-start align-items-lg-center">
               <a href="/dashboard" className="nav-link text-white fw-medium">Dashboard</a>
+              <a href="/modules" className="nav-link text-white fw-medium">Modules</a>
               <a href="/chat" className="nav-link text-white fw-medium">Ask Bot</a>
               <a href="/quiz" className="nav-link text-white fw-medium">Practice Exam</a>
               <a href="/profile" className="nav-link text-white fw-medium">Profile</a>
@@ -82,6 +106,7 @@ function App() {
             <Route path="/chat" element={<PrivateRoute><AppLayout><ChatbotInterface /></AppLayout></PrivateRoute>} />
             <Route path="/quiz" element={<PrivateRoute><AppLayout><QuizEngine /></AppLayout></PrivateRoute>} />
             <Route path="/profile" element={<PrivateRoute><AppLayout><Profile /></AppLayout></PrivateRoute>} />
+            <Route path="/modules" element={<PrivateRoute><AppLayout><Modules /></AppLayout></PrivateRoute>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

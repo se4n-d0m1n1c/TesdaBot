@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, HelpCircle, Loader2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import useSWR from 'swr';
 import { supabase } from '../../lib/supabaseClient';
 import { useAuth } from '../../context/AuthContext';
@@ -14,13 +15,17 @@ const fetcher = async (url) => {
 
 const ChatbotInterface = () => {
   const { user } = useAuth();
+  const location = useLocation();
+  const selectedModule = location.state?.module;
   const { data: sessions, error, isLoading } = useSWR(user ? 'chat_sessions' : null, fetcher);
   
   const [messages, setMessages] = useState([
     {
       id: 1,
       sender: 'bot',
-      text: 'Hello! I am TESDA-Bot. I can help you understand training regulations, review modules, and prepare for your NCII assessment. What would you like to discuss today?'
+      text: selectedModule 
+        ? `Hello! I see you want to discuss "${selectedModule}". How can I help you with this module today?`
+        : 'Hello! I am TESDA-Bot. I can help you understand training regulations, review modules, and prepare for your NCII assessment. What would you like to discuss today?'
     }
   ]);
   const [sessionId, setSessionId] = useState(null);
@@ -69,6 +74,9 @@ const ChatbotInterface = () => {
     setInput('');
     setIsTyping(true);
     await saveSession(newMessages);
+    
+    // Record daily activity for streak
+    await supabase.rpc('record_daily_activity');
 
     // Mocking AI response - Later connect this to AI provider
     setTimeout(async () => {

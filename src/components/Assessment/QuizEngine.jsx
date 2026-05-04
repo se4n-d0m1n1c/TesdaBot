@@ -4,21 +4,25 @@ import useSWR from 'swr';
 import { supabase } from '../../lib/supabaseClient';
 import { useAuth } from '../../context/AuthContext';
 
-const fetcher = async ([url, track]) => {
+const fetcher = async ([url, track, module]) => {
   if (url === 'questions') {
-    const { data, error } = await supabase.from('questions').select('*').eq('ncii_track', track);
+    let query = supabase.from('questions').select('*').eq('ncii_track', track);
+    if (module) {
+      query = query.eq('module', module);
+    }
+    const { data, error } = await query;
     if (error) throw error;
-    // For randomizing or selecting a subset, we could do it here. 
-    // For now, return all matching questions.
     return data;
   }
 };
 
 const QuizEngine = () => {
   const { user } = useAuth();
+  const location = useLocation();
   const nciiTrack = user?.user_metadata?.ncii_track || 'Computer Systems Servicing NCII';
+  const selectedModule = location.state?.module;
 
-  const { data: questions, error, isLoading } = useSWR(user ? ['questions', nciiTrack] : null, fetcher);
+  const { data: questions, error, isLoading } = useSWR(user ? ['questions', nciiTrack, selectedModule] : null, fetcher);
 
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -51,6 +55,9 @@ const QuizEngine = () => {
       if (user) {
         setSaving(true);
         try {
+          // Record daily activity for streak
+          await supabase.rpc('record_daily_activity');
+
           await supabase.from('assessment_records').insert([
             {
               user_id: user.id,
@@ -118,7 +125,7 @@ const QuizEngine = () => {
       <div className="d-flex justify-content-between align-items-end mb-4">
         <div>
           <h2 className="fw-bold mb-1" style={{ color: 'var(--tb-text-heading)' }}>Practice Exam</h2>
-          <p className="text-muted mb-0">Module: Computer Systems Servicing NCII</p>
+          <p className="text-muted mb-0">Module: {selectedModule || 'Full Mock Exam'}</p>
         </div>
         <div className="text-end">
           <span className="fw-bold fs-5 text-primary">Question {currentQuestionIdx + 1}</span>
