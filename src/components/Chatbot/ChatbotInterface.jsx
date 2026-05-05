@@ -18,7 +18,7 @@ const fetcher = async (url, param) => {
     if (error) throw error;
     return data;
   }
-  
+
   if (url === 'chat_messages' && param) {
     const { data, error } = await supabase.from('chat_messages').select('*').eq('session_id', param).order('created_at', { ascending: true });
     if (error) throw error;
@@ -31,11 +31,11 @@ const ChatbotInterface = () => {
   const location = useLocation();
   const selectedModule = location.state?.module;
   const nciiTrack = user?.user_metadata?.ncii_track || 'Computer Systems Servicing NCII';
-  
+
   const { data: sessions, isLoading: sessionsLoading } = useSWR(user ? ['chat_sessions', nciiTrack] : null, (args) => fetcher(args[0], args[1]));
   const [sessionId, setSessionId] = useState(null);
   const { data: dbMessages, mutate: mutateMessages, isLoading: messagesLoading } = useSWR(user && sessionId ? ['chat_messages', sessionId] : null, (args) => fetcher(args[0], args[1]));
-  
+
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
@@ -44,7 +44,7 @@ const ChatbotInterface = () => {
   const welcomeMessage = {
     id: 'welcome',
     role: 'assistant',
-    content: selectedModule 
+    content: selectedModule
       ? `Hello! I see you want to discuss "${selectedModule}". How can I help you with this module today?`
       : 'Hello! I am TESDA-Bot. I can help you understand training regulations, review modules, and prepare for your NCII assessment. What would you like to discuss today?'
   };
@@ -67,8 +67,8 @@ const ChatbotInterface = () => {
 
   const getOrCreateSessionId = async () => {
     if (sessionId) return sessionId;
-    const { data, error } = await supabase.from('chat_sessions').insert([{ 
-      user_id: user.id, 
+    const { data, error } = await supabase.from('chat_sessions').insert([{
+      user_id: user.id,
       title: selectedModule || 'General Discussion',
       ncii_track: nciiTrack
     }]).select();
@@ -90,17 +90,16 @@ const ChatbotInterface = () => {
       const activeSessionId = await getOrCreateSessionId();
 
       // 1. Save user message to DB (Best Practice: Local Optimistic Update via Mutate)
-      // 1. Save user message to DB (Best Practice: Local Optimistic Update via Mutate)
       const dbUserMsg = {
         session_id: activeSessionId,
         user_id: user.id,
         role: 'user',
         content: currentInput
       };
-      
+
       const { error: insertError } = await supabase.from('chat_messages').insert(dbUserMsg);
       if (insertError) throw insertError;
-      
+
       const userMsg = { ...dbUserMsg, id: 'temp-' + Date.now() };
       mutateMessages([...(dbMessages || []), userMsg], false);
 
@@ -133,7 +132,7 @@ const ChatbotInterface = () => {
 
       // 4. Final sync with DB
       await mutateMessages();
-      
+
       // Record daily activity for streak
       await supabase.rpc('record_daily_activity');
     } catch (err) {
@@ -178,9 +177,9 @@ const ChatbotInterface = () => {
             <div className={`p-2 rounded-circle align-self-end ${(msg.role === 'user' || msg.sender === 'user') ? 'bg-primary text-white' : 'bg-white shadow-sm border'}`} style={{ minWidth: '40px', textAlign: 'center' }}>
               {(msg.role === 'user' || msg.sender === 'user') ? <User size={20} /> : <Bot size={20} style={{ color: 'var(--tb-primary)' }} />}
             </div>
-            
+
             {/* Message Bubble */}
-            <div 
+            <div
               className={`p-3 shadow-sm ${(msg.role === 'user' || msg.sender === 'user') ? 'bg-primary text-white' : 'bg-white'}`}
               style={{
                 borderRadius: 'var(--tb-radius-lg)',
@@ -190,19 +189,19 @@ const ChatbotInterface = () => {
                 lineHeight: '1.5'
               }}
             >
-              <ReactMarkdown 
+              <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  p: ({node, ...props}) => <p className="mb-2" {...props} />,
-                  ul: ({node, ...props}) => <ul className="mb-2 ps-3" {...props} />,
-                  ol: ({node, ...props}) => <ol className="mb-2 ps-3" {...props} />,
-                  li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                  code: ({node, inline, ...props}) => (
+                  p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+                  ul: ({ node, ...props }) => <ul className="mb-2 ps-3" {...props} />,
+                  ol: ({ node, ...props }) => <ol className="mb-2 ps-3" {...props} />,
+                  li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                  code: ({ node, inline, ...props }) => (
                     <code className={`px-1 py-0.5 rounded bg-opacity-10 ${msg.role === 'user' || msg.sender === 'user' ? 'bg-white' : 'bg-dark text-danger'}`} {...props} />
                   ),
-                  h1: ({node, ...props}) => <h1 className="h5 fw-bold mb-2" {...props} />,
-                  h2: ({node, ...props}) => <h2 className="h6 fw-bold mb-2" {...props} />,
-                  h3: ({node, ...props}) => <h3 className="h6 fw-bold mb-2" {...props} />,
+                  h1: ({ node, ...props }) => <h1 className="h5 fw-bold mb-2" {...props} />,
+                  h2: ({ node, ...props }) => <h2 className="h6 fw-bold mb-2" {...props} />,
+                  h3: ({ node, ...props }) => <h3 className="h6 fw-bold mb-2" {...props} />,
                 }}
               >
                 {msg.content || msg.text}
@@ -210,7 +209,7 @@ const ChatbotInterface = () => {
             </div>
           </div>
         ))}
-        
+
         {isTyping && (
           <div className="d-flex gap-3">
             <div className="p-2 rounded-circle bg-white shadow-sm border align-self-end" style={{ minWidth: '40px', textAlign: 'center' }}>
@@ -229,8 +228,8 @@ const ChatbotInterface = () => {
         {messages.length <= 1 && !isTyping && (
           <div className="d-flex gap-2 mb-3 overflow-auto pb-2" style={{ whiteSpace: 'nowrap' }}>
             {suggestions.map((s, i) => (
-              <button 
-                key={i} 
+              <button
+                key={i}
                 type="button"
                 className="btn btn-sm btn-outline-secondary rounded-pill border-opacity-50 tb-glass"
                 onClick={() => setInput(s)}
@@ -250,9 +249,9 @@ const ChatbotInterface = () => {
             disabled={isTyping}
             style={{ borderRadius: 'var(--tb-radius-md)' }}
           />
-          <button 
-            type="submit" 
-            className="btn btn-primary d-flex align-items-center justify-content-center px-4" 
+          <button
+            type="submit"
+            className="btn btn-primary d-flex align-items-center justify-content-center px-4"
             disabled={!input.trim() || isTyping}
             style={{ borderRadius: 'var(--tb-radius-md)' }}
           >

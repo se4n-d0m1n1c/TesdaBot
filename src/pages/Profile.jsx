@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { User, BookOpenCheck, Save, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { User, BookOpenCheck, Save, Loader2, AlertCircle, CheckCircle, Camera } from 'lucide-react';
 import useSWR from 'swr';
 import { supabase } from '../lib/supabaseClient';
 import { useAuth } from '../context/AuthContext';
@@ -12,8 +12,11 @@ const fetchTracks = async () => {
 
 const Profile = () => {
   const { user } = useAuth();
+  const fileInputRef = useRef(null);
   const [fullName, setFullName] = useState('');
   const [track, setTrack] = useState('');
+  const [avatarUrl, setAvatarUrl] = useState('');
+  const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState(null); // { type: 'success' | 'error', message: string }
 
@@ -24,8 +27,43 @@ const Profile = () => {
     if (user) {
       setFullName(user.user_metadata?.full_name || '');
       setTrack(user.user_metadata?.ncii_track || '');
+      setAvatarUrl(user.user_metadata?.avatar_url || '');
     }
   }, [user]);
+
+  const handleAvatarUpload = async (e) => {
+    try {
+      setUploading(true);
+      setStatus(null);
+
+      if (!e.target.files || e.target.files.length === 0) {
+        throw new Error('Select image to upload.');
+      }
+
+      const file = e.target.files[0];
+      const fileExt = file.name.split('.').pop();
+      const filePath = `${user.id}/${Math.random()}.${fileExt}`;
+
+      // 1. Upload to Supabase Storage
+      const { error: uploadError } = await supabase.storage
+        .from('avatars')
+        .upload(filePath, file, { upsert: true });
+
+      if (uploadError) throw uploadError;
+
+      // 2. Get Public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('avatars')
+        .getPublicUrl(filePath);
+
+      setAvatarUrl(publicUrl);
+      setStatus({ type: 'success', message: 'Avatar uploaded! Save profile to confirm.' });
+    } catch (err) {
+      setStatus({ type: 'error', message: err.message });
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +75,8 @@ const Profile = () => {
       const { error: authError } = await supabase.auth.updateUser({
         data: {
           full_name: fullName,
-          ncii_track: track
+          ncii_track: track,
+          avatar_url: avatarUrl
         }
       });
       if (authError) throw authError;
@@ -48,6 +87,7 @@ const Profile = () => {
         .update({
           full_name: fullName,
           ncii_track: track,
+          avatar_url: avatarUrl,
           updated_at: new Date().toISOString()
         })
         .eq('id', user.id);
@@ -65,8 +105,34 @@ const Profile = () => {
   return (
     <div className="animate-fade-in max-w-2xl mx-auto" style={{ maxWidth: '800px' }}>
       <div className="d-flex align-items-center gap-3 mb-4 mb-md-5">
-        <div className="bg-primary bg-opacity-10 p-3 rounded-circle" style={{ color: 'var(--tb-primary)' }}>
-          <User size={32} />
+        <div className="position-relative">
+          <div 
+            className="rounded-circle overflow-hidden bg-primary bg-opacity-10 d-flex align-items-center justify-content-center border" 
+            style={{ width: '80px', height: '80px', border: '2px solid var(--tb-primary) !important' }}
+          >
+            {avatarUrl ? (
+              <img src={avatarUrl} alt="Profile" className="w-100 h-100 object-fit-cover" />
+            ) : (
+              <User size={40} className="text-primary" style={{ color: 'var(--tb-primary)' }} />
+            )}
+          </div>
+          <button 
+            type="button"
+            className="btn btn-primary rounded-circle p-1 position-absolute shadow-sm d-flex align-items-center justify-content-center"
+            style={{ bottom: '-5px', right: '-5px', width: '28px', height: '28px' }}
+            onClick={() => fileInputRef.current?.click()}
+            disabled={uploading}
+            title="Change Avatar"
+          >
+            {uploading ? <Loader2 size={14} className="spinner-border spinner-border-sm" /> : <Camera size={14} />}
+          </button>
+          <input 
+            type="file" 
+            ref={fileInputRef} 
+            className="d-none" 
+            accept="image/*" 
+            onChange={handleAvatarUpload}
+          />
         </div>
         <div>
           <h1 className="fw-bold mb-1" style={{ color: 'var(--tb-text-heading)' }}>Your Profile</h1>
@@ -133,7 +199,7 @@ const Profile = () => {
             <button 
               type="submit" 
               className="btn btn-primary btn-lg d-flex align-items-center gap-2 px-5" 
-              disabled={saving}
+              disabled={saving || uploading}
             >
               {saving ? <Loader2 size={20} className="spinner-border spinner-border-sm" /> : <Save size={20} />}
               {saving ? 'Saving...' : 'Save Changes'}
