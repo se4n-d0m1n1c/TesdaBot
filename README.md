@@ -1,16 +1,93 @@
-# React + Vite
+# 🤖 TesdaBot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TesdaBot** is a premium academic AI assistant designed specifically for vocational students in the Philippines. It provides specialized tutoring, guidance on NCII Training Regulations, and technical mastery support within a modern, responsive web interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Context-Aware AI Tutoring**: Powered by DeepSeek, providing tailored assistance based on the student's current track and module.
+- **NCII Mastery Focus**: Specialized knowledge in Philippine vocational training standards.
+- **Persistent Chat History**: Automatically saves conversations for students to refer back to.
+- **Modern Design System**: A "Premium Academic" aesthetic built with Bootstrap and custom CSS.
+- **Real-time Interaction**: Fast responses with Supabase Edge Functions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React 19 (Vite), Bootstrap 5, Sass, Lucide Icons.
+- **Backend**: Supabase (Auth, PostgreSQL, Edge Functions).
+- **AI Engine**: DeepSeek Chat API.
+- **State Management**: SWR for efficient data fetching.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/)
+- [Supabase CLI](https://supabase.com/docs/guides/cli) (for local development or deployment)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/se4n-d0m1n1c/TesdaBot.git
+cd TesdaBot
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Configuration
+
+Create a `.env.local` file in the root directory and add your credentials:
+
+```env
+VITE_SUPABASE_URL="YOUR_SUPABASE_URL"
+VITE_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
+VITE_AI_PROVIDER="openai" # or 'mock' for testing
+VITE_AI_API_KEY="YOUR_DEEPSEEK_OR_OPENAI_KEY"
+```
+
+### 4. Database Setup (Supabase)
+
+Initialize your Supabase project and apply migrations:
+
+```bash
+supabase link --project-ref your-project-id
+supabase db push
+```
+
+### 5. Deploy Edge Functions
+
+Ensure you have set the `DEEPSEEK_API_KEY` in your Supabase secrets:
+
+```bash
+supabase secrets set DEEPSEEK_API_KEY=your_key_here
+supabase functions deploy chat
+```
+
+### 6. Run Locally
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+---
+
+## 📁 Project Structure
+
+- `src/components`: UI components (Chatbot, Dashboard, etc.).
+- `supabase/migrations`: SQL scripts for database schema and RLS policies.
+- `supabase/functions`: Edge functions for AI integration.
+- `docs/`: Additional documentation and assets.
+
+## 📄 License
+
+This project is licensed under the MIT License.
