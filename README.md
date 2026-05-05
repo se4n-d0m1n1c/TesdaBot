@@ -1,10 +1,10 @@
-# 🤖 TesdaBot
+# TesdaBot
 
 **TesdaBot** is a premium academic AI assistant designed specifically for vocational students in the Philippines. It provides specialized tutoring, guidance on NCII Training Regulations, and technical mastery support within a modern, responsive web interface.
 
 ---
 
-## ✨ Features
+## Features
 
 - **Context-Aware AI Tutoring**: Powered by DeepSeek, providing tailored assistance based on the student's current track and module.
 - **NCII Mastery Focus**: Specialized knowledge in Philippine vocational training standards.
@@ -12,7 +12,7 @@
 - **Modern Design System**: A "Premium Academic" aesthetic built with Bootstrap and custom CSS.
 - **Real-time Interaction**: Fast responses with Supabase Edge Functions.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 19 (Vite), Bootstrap 5, Sass, Lucide Icons.
 - **Backend**: Supabase (Auth, PostgreSQL, Edge Functions).
@@ -21,7 +21,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -81,13 +81,9 @@ The application will be available at `http://localhost:5173`.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 - `src/components`: UI components (Chatbot, Dashboard, etc.).
 - `supabase/migrations`: SQL scripts for database schema and RLS policies.
 - `supabase/functions`: Edge functions for AI integration.
 - `docs/`: Additional documentation and assets.
-
-## 📄 License
-
-This project is licensed under the MIT License.
